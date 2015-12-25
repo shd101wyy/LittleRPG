@@ -5,7 +5,9 @@ import ReactDOM from 'react-dom'
 
 import './less/entry.less'
 
+import Console from './data/console.js'
+
 ReactDOM.render(
-  <h1> Hi </h1>,
+  <Console></Console>,
   document.getElementById('app')
 )

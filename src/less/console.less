@@ -1,0 +1,28 @@
+.console {
+  position: relative;
+  width: 800px;
+  height: 300px;
+  display: block;
+  margin-left: ~"calc(50% - 400px)";
+  color: #c9c9c9;
+  text-align: left;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(to top, #232323 20%, rgba(255, 255, 255, 0) 80%);
+    pointer-events: none; /* so the text is still selectable */
+  }
+
+  .history {
+    font-size: 16px;
+  }
+}

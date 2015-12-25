@@ -56,13 +56,13 @@
 
 	__webpack_require__(160);
 
+	var _console = __webpack_require__(171);
+
+	var _console2 = _interopRequireDefault(_console);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(
-	  'h1',
-	  null,
-	  ' Hi '
-	), document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(_console2.default, null), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -19687,7 +19687,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  margin-top: 200px;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  text-align: left;\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n.map .first {\n  font-size: 44px;\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: hidden;\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  background: linear-gradient(to top, #232323 20%, rgba(255, 255, 255, 0) 80%);\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n", ""]);
 
 	// exports
 
@@ -20001,6 +20001,543 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 164 */,
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _empty = __webpack_require__(166);
+
+	var _empty2 = _interopRequireDefault(_empty);
+
+	var _tree = __webpack_require__(168);
+
+	var _tree2 = _interopRequireDefault(_tree);
+
+	var _player = __webpack_require__(169);
+
+	var _player2 = _interopRequireDefault(_player);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var mapData = [[new _empty2.default(), new _tree2.default(), new _empty2.default(), new _empty2.default(), new _empty2.default()], [new _empty2.default(), new _tree2.default(), new _empty2.default(), new _empty2.default(), new _tree2.default()], [new _empty2.default(), new _empty2.default(), new _empty2.default(), new _tree2.default(), new _empty2.default()], [new _empty2.default(), new _empty2.default(), new _empty2.default(), new _empty2.default(), new _empty2.default()], [new _empty2.default(), new _player2.default(), new _empty2.default(), new _empty2.default(), new _empty2.default()]];
+
+	var Map = (function (_React$Component) {
+	  _inherits(Map, _React$Component);
+
+	  function Map(props) {
+	    _classCallCheck(this, Map);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Map).call(this, props));
+
+	    var playerCoord = _this.getPlayerCoordinate(),
+	        player = mapData[playerCoord[0]][playerCoord[1]];
+	    _this.state = {
+	      playerCoord: playerCoord,
+	      player: player
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Map, [{
+	    key: 'getPlayerCoordinate',
+	    value: function getPlayerCoordinate() {
+	      for (var i = 0; i < mapData.length; i++) {
+	        for (var j = 0; j < mapData[i].length; j++) {
+	          if (mapData[i][j].name === 'player') {
+	            return [i, j];
+	          }
+	        }
+	      }
+	    }
+
+	    /*
+	      玩家可以移动三个方向
+	      i = 1   => 左上
+	      i = 2   => 上
+	      i = 3   => 右上
+	     */
+
+	  }, {
+	    key: 'playerMove',
+	    value: function playerMove(i, mapItem) {
+	      if (i === 1) {
+	        var playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1] - 1];
+	        if (playerCoord[0] < 0) {
+	          playerCoord[0] = mapData.length - 1;
+	        }
+	        this.setState({ playerCoord: playerCoord });
+	        console.log(this.props.console);
+	        this.props.console.addHistory('你往 左上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	      } else if (i === 2) {
+	        var playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1]];
+	        if (playerCoord[0] < 0) {
+	          playerCoord[0] = mapData.length - 1;
+	        }
+	        this.setState({ playerCoord: playerCoord });
+	        this.props.console.addHistory('你往 上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	      } else if (i === 3) {
+	        var playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1] + 1];
+	        if (playerCoord[0] < 0) {
+	          playerCoord[0] = mapData.length - 1;
+	        }
+	        this.setState({ playerCoord: playerCoord });
+	        this.props.console.addHistory('你往 右上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	      } else {
+	        this.props.console.addHistory('你不能放那里走');
+	      }
+	    }
+	  }, {
+	    key: 'playerCannotMove',
+	    value: function playerCannotMove(mapItem) {
+	      if (mapItem.meetText) {
+	        this.props.console.addHistory(mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	      } else {
+	        this.props.console.addHistory('你不能放那里走');
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      // visible map => 3 row 5 columns
+	      // put player in the [3, 2]
+	      // . . . . .
+	      // . . . . .
+	      // . . . . .
+	      //     @
+	      var map = [[], [], []];
+	      var info = [];
+	      var infoGot = {};
+	      for (var i = 0; i < 3; i++) {
+	        for (var j = 0; j < 5; j++) {
+	          var y = this.state.playerCoord[1] - 2 + j,
+	              // column
+	          x = this.state.playerCoord[0] - 1 - i; // row
+
+	          if (x < 0) {
+	            x = mapData.length + x;
+	          }
+
+	          if (y < 0 || y >= mapData[x].length) {
+	            map[2 - i].push(null);
+	          } else {
+	            var mapItem = mapData[x][y];
+	            if (mapItem.name === "player") {
+	              mapItem = new _empty2.default();
+	            }
+
+	            map[2 - i].push(mapItem);
+	            if (!infoGot[mapItem.name]) {
+	              infoGot[mapItem.name] = true;
+	              info.push([mapItem.ascii, mapItem.info, mapItem.color]);
+	            }
+	          }
+	        }
+	      }
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'map-panel' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'map-instruction' },
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            ' 背包 '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            '    '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            '  '
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'map' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'fourth map-row' },
+	            ' ',
+	            map[0].map(function (mapItem, i) {
+	              if (mapItem === null) {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { key: i, className: 'map-item' },
+	                  ' '
+	                );
+	              } else {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { className: 'map-item', key: i, style: { color: mapItem.color } },
+	                  ' ',
+	                  mapItem.ascii,
+	                  ' '
+	                );
+	              }
+	            })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'third map-row' },
+	            ' ',
+	            map[1].map(function (mapItem, i) {
+	              if (mapItem === null) {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { key: i, className: 'map-item' },
+	                  ' '
+	                );
+	              } else {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { className: 'map-item', key: i, style: { color: mapItem.color } },
+	                  ' ',
+	                  mapItem.ascii,
+	                  ' '
+	                );
+	              }
+	            })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'second map-row' },
+	            ' ',
+	            map[2].map(function (mapItem, i) {
+	              if (mapItem === null) {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { key: i, className: 'map-item' },
+	                  ' '
+	                );
+	              } else {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { className: "map-item " + (i > 0 && i < 4 ? 'movable' : ' not-movable'), key: i, style: { color: mapItem.color }, onClick: mapItem.movable ? _this2.playerMove.bind(_this2, i, mapItem) : _this2.playerCannotMove.bind(_this2, mapItem) },
+	                  ' ',
+	                  mapItem.ascii,
+	                  ' '
+	                );
+	              }
+	            })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'first map-row' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'map-item' },
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'map-item' },
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'map-item', style: { color: this.state.player.color } },
+	              this.state.player.ascii
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'map-item' },
+	              ' '
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'map-item' },
+	              ' '
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'map-info' },
+	          info.map(function (elem, i) {
+	            return _react2.default.createElement(
+	              'p',
+	              { key: i },
+	              ' ',
+	              _react2.default.createElement(
+	                'span',
+	                { style: { color: elem[2] } },
+	                ' ',
+	                elem[0],
+	                ' '
+	              ),
+	              '     ',
+	              elem[1],
+	              ' '
+	            );
+	          })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Map;
+	})(_react2.default.Component);
+
+	exports.default = Map;
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _game_object = __webpack_require__(167);
+
+	var _game_object2 = _interopRequireDefault(_game_object);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Empty = (function (_GameObject) {
+	  _inherits(Empty, _GameObject);
+
+	  function Empty() {
+	    _classCallCheck(this, Empty);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Empty).call(this, {
+	      name: 'empty',
+	      ascii: '.',
+	      info: '空地',
+	      color: '#89be9f',
+	      meetText: ['你来到了一片空地，这里什么也没有', '你来到了一片空地，这里很空旷，你感到有一丝凄凉', '你的眼前空荡荡的什么也没有'],
+	      movable: true }));
+	  }
+
+	  return Empty;
+	})(_game_object2.default);
+
+	exports.default = Empty;
+
+/***/ },
+/* 167 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var GameObject = function GameObject() {
+	  var props = arguments.length <= 0 || arguments[0] === undefined ? { name: 'empty', ascii: '.', info: '空地', color: '#89be9f', movable: true } : arguments[0];
+
+	  _classCallCheck(this, GameObject);
+
+	  this.name = props.name;
+	  this.ascii = props.ascii;
+	  this.info = props.info;
+	  this.color = props.color;
+	  this.meetText = props.meetText;
+	  this.movable = props.movable;
+	};
+
+	exports.default = GameObject;
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _game_object = __webpack_require__(167);
+
+	var _game_object2 = _interopRequireDefault(_game_object);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Tree = (function (_GameObject) {
+	  _inherits(Tree, _GameObject);
+
+	  function Tree() {
+	    _classCallCheck(this, Tree);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Tree).call(this, {
+	      name: 'tree',
+	      ascii: 'T',
+	      info: '树',
+	      color: '#518566',
+	      meetText: ['一棵树阻挡住了你前进的道路, 你因此退了回来', '你的眼前屹立了一棵巨大无比的树，把路给封住了'],
+	      movable: false }));
+	  }
+
+	  return Tree;
+	})(_game_object2.default);
+
+	exports.default = Tree;
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _game_object = __webpack_require__(167);
+
+	var _game_object2 = _interopRequireDefault(_game_object);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Player = (function (_GameObject) {
+	  _inherits(Player, _GameObject);
+
+	  function Player() {
+	    _classCallCheck(this, Player);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Player).call(this, { name: 'player', ascii: '@', info: '玩家', color: '#FFF92B' }));
+	  }
+
+	  return Player;
+	})(_game_object2.default);
+
+	exports.default = Player;
+
+/***/ },
+/* 170 */,
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _map = __webpack_require__(165);
+
+	var _map2 = _interopRequireDefault(_map);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Console = (function (_React$Component) {
+	  _inherits(Console, _React$Component);
+
+	  function Console(props) {
+	    _classCallCheck(this, Console);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Console).call(this, props));
+
+	    _this.state = {
+	      texts: ["你进入了暮色森林"]
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Console, [{
+	    key: 'addHistory',
+	    value: function addHistory(text) {
+	      var texts = this.state.texts;
+	      texts.push(text);
+	      this.setState({ texts: texts });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var historys = [];
+	      for (var i = this.state.texts.length - 1; i >= 0; i--) {
+	        historys.push(_react2.default.createElement(
+	          'p',
+	          { key: i, className: 'history' },
+	          ' ',
+	          this.state.texts[i],
+	          ' '
+	        ));
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _map2.default,
+	          { console: this },
+	          ' '
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'console' },
+	          historys
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Console;
+	})(_react2.default.Component);
+
+	exports.default = Console;
 
 /***/ }
 /******/ ]);

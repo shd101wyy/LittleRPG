@@ -1,0 +1,84 @@
+.map-panel {
+  width: 800px;
+  height: 500px;
+  display: inline-block;
+}
+
+.map-instruction {
+  float: left;
+  width: 200px;
+  margin-top: 200px;
+  color: #c9c9c9;
+  font-size: 14px;
+  margin-top: 218px;
+  text-align: left;
+}
+
+.map {
+  float: left;
+  width: 400px;
+  height: 300px;
+  margin-top: 200px;
+  font-size: 32px;
+  letter-spacing: 8px;
+
+  .first {
+    font-size: 44px;
+  }
+
+  .second {
+    opacity: 1;
+    font-size: 36px;
+  }
+
+  .third {
+    opacity: 0.6;
+    font-size: 28px;
+  }
+
+  .fourth {
+    opacity: 0.3;
+    font-size: 24px;
+  }
+
+  .map-row {
+    width: 100%;
+    height: 32px;
+    margin-bottom: 32px;
+  }
+
+  .map-item {
+    width: 32px;
+    height: 32px;
+    float: left;
+    text-align: center;
+    margin-right: 32px;
+    padding-bottom: 18px;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .not-movable {
+    opacity: 0.6;
+  }
+
+  .movable {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.map-info {
+  float: left;
+  color: #c9c9c9;
+  font-size: 14px;
+  margin-top: 218px;
+  width: 200px;
+  text-align: left;
+}
