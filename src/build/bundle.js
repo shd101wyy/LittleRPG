@@ -19687,7 +19687,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  margin-top: 200px;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  text-align: left;\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n.map .first {\n  font-size: 44px;\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: hidden;\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  background: linear-gradient(to top, #232323 20%, rgba(255, 255, 255, 0) 80%);\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  margin-top: 200px;\n  color: #c9c9c9;\n  font-size: 16px;\n  margin-top: 218px;\n  text-align: left;\n}\n.map-instruction .hp {\n  color: #d95858;\n}\n.map-instruction .energy {\n  color: #418aeb;\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n.map .first {\n  font-size: 44px;\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: hidden;\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  background: linear-gradient(to top, #232323 20%, rgba(255, 255, 255, 0) 80%);\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n", ""]);
 
 	// exports
 
@@ -20015,17 +20015,25 @@
 	  value: true
 	});
 
-	var _empty = __webpack_require__(166);
+	var _empty2 = __webpack_require__(166);
 
-	var _empty2 = _interopRequireDefault(_empty);
+	var _empty3 = _interopRequireDefault(_empty2);
 
-	var _tree = __webpack_require__(168);
+	var _tree2 = __webpack_require__(168);
 
-	var _tree2 = _interopRequireDefault(_tree);
+	var _tree3 = _interopRequireDefault(_tree2);
 
-	var _player = __webpack_require__(169);
+	var _player2 = __webpack_require__(169);
 
-	var _player2 = _interopRequireDefault(_player);
+	var _player3 = _interopRequireDefault(_player2);
+
+	var _stone_wall = __webpack_require__(172);
+
+	var _stone_wall2 = _interopRequireDefault(_stone_wall);
+
+	var _evil_knight = __webpack_require__(173);
+
+	var _evil_knight2 = _interopRequireDefault(_evil_knight);
 
 	var _react = __webpack_require__(1);
 
@@ -20039,7 +20047,12 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var mapData = [[new _empty2.default(), new _tree2.default(), new _empty2.default(), new _empty2.default(), new _empty2.default()], [new _empty2.default(), new _tree2.default(), new _empty2.default(), new _empty2.default(), new _tree2.default()], [new _empty2.default(), new _empty2.default(), new _empty2.default(), new _tree2.default(), new _empty2.default()], [new _empty2.default(), new _empty2.default(), new _empty2.default(), new _empty2.default(), new _empty2.default()], [new _empty2.default(), new _player2.default(), new _empty2.default(), new _empty2.default(), new _empty2.default()]];
+	var _empty = new _empty3.default(),
+	    _tree = new _tree3.default(),
+	    _stoneWall = new _stone_wall2.default(),
+	    _player = new _player3.default(),
+	    _evilKnight = new _evil_knight2.default();
+	var mapData = [[_tree, _stoneWall, _empty, _empty, _stoneWall, _empty], [_empty, _stoneWall, _empty, _empty, _stoneWall, _tree], [_tree, _stoneWall, _empty, _evilKnight, _stoneWall, _empty], [_empty, _stoneWall, _empty, _empty, _stoneWall, _tree], [_tree, _stoneWall, _player, _empty, _stoneWall, _empty]];
 
 	var Map = (function (_React$Component) {
 	  _inherits(Map, _React$Component);
@@ -20086,24 +20099,23 @@
 	          playerCoord[0] = mapData.length - 1;
 	        }
 	        this.setState({ playerCoord: playerCoord });
-	        console.log(this.props.console);
-	        this.props.console.addHistory('你往 左上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	        this.props.console.addHistory('你往 左前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
 	      } else if (i === 2) {
 	        var playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1]];
 	        if (playerCoord[0] < 0) {
 	          playerCoord[0] = mapData.length - 1;
 	        }
 	        this.setState({ playerCoord: playerCoord });
-	        this.props.console.addHistory('你往 上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	        this.props.console.addHistory('你往 前 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
 	      } else if (i === 3) {
 	        var playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1] + 1];
 	        if (playerCoord[0] < 0) {
 	          playerCoord[0] = mapData.length - 1;
 	        }
 	        this.setState({ playerCoord: playerCoord });
-	        this.props.console.addHistory('你往 右上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	        this.props.console.addHistory('你往 右前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
 	      } else {
-	        this.props.console.addHistory('你不能放那里走');
+	        this.props.console.addHistory('你不能往那里走');
 	      }
 	    }
 	  }, {
@@ -20112,7 +20124,7 @@
 	      if (mapItem.meetText) {
 	        this.props.console.addHistory(mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
 	      } else {
-	        this.props.console.addHistory('你不能放那里走');
+	        this.props.console.addHistory('你不能往那里走');
 	      }
 	    }
 	  }, {
@@ -20144,7 +20156,7 @@
 	          } else {
 	            var mapItem = mapData[x][y];
 	            if (mapItem.name === "player") {
-	              mapItem = new _empty2.default();
+	              mapItem = _empty;
 	            }
 
 	            map[2 - i].push(mapItem);
@@ -20156,6 +20168,10 @@
 	        }
 	      }
 
+	      info = info.sort(function (a, b) {
+	        return parseInt(a[2].slice(1), 16) - parseInt(b[2].slice(1), 16);
+	      });
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'map-panel' },
@@ -20164,13 +20180,13 @@
 	          { className: 'map-instruction' },
 	          _react2.default.createElement(
 	            'p',
-	            null,
-	            ' 背包 '
+	            { className: 'hp' },
+	            ' ♥♥♥♥♥♥♥♥♥♥ '
 	          ),
 	          _react2.default.createElement(
 	            'p',
-	            null,
-	            '    '
+	            { className: 'energy' },
+	            '♦︎♦︎♦︎'
 	          ),
 	          _react2.default.createElement(
 	            'p',
@@ -20538,6 +20554,95 @@
 	})(_react2.default.Component);
 
 	exports.default = Console;
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _game_object = __webpack_require__(167);
+
+	var _game_object2 = _interopRequireDefault(_game_object);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var StoneWall = (function (_GameObject) {
+	  _inherits(StoneWall, _GameObject);
+
+	  function StoneWall() {
+	    _classCallCheck(this, StoneWall);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(StoneWall).call(this, {
+	      name: 'stone_wall',
+	      ascii: '#',
+	      info: '石墙',
+	      color: '#616362',
+	      meetText: ['你撞上了一面石头做的墙，被弹了回来', '你盯着一堵石墙，不知所措，无法通过', '一面墙堵在了前面，你退了回来'],
+	      movable: false }));
+	  }
+
+	  return StoneWall;
+	})(_game_object2.default);
+
+	exports.default = StoneWall;
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _game_object = __webpack_require__(167);
+
+	var _game_object2 = _interopRequireDefault(_game_object);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EvilKnight = (function (_GameObject) {
+	  _inherits(EvilKnight, _GameObject);
+
+	  function EvilKnight() {
+	    _classCallCheck(this, EvilKnight);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(EvilKnight).call(this, {
+	      name: 'evil knight',
+	      ascii: 'K',
+	      info: '邪恶骑士',
+	      color: '#853e11',
+	      meetText: ['你遇到了一个邪恶的骑士，他轻蔑的看了你一眼，拔出了他的剑', '一个邪恶骑士挡在了你的面前，你和他进入了战斗'],
+	      movable: true }));
+
+	    _this.isEnemy = true;
+	    _this.hp = 5;
+	    _this.energy = 3;
+	    return _this;
+	  }
+
+	  return EvilKnight;
+	})(_game_object2.default);
+
+	exports.default = EvilKnight;
 
 /***/ }
 /******/ ]);

@@ -1,15 +1,22 @@
 import Empty from './objects/empty.js'
 import Tree from './objects/tree.js'
 import Player from './objects/player.js'
+import StoneWall from './objects/stone_wall.js'
+import EvilKnight from './enemies/evil_knight.js'
 
 import React from 'react'
 
+let _empty = new Empty(),
+    _tree = new Tree(),
+    _stoneWall = new StoneWall(),
+    _player = new Player(),
+    _evilKnight = new EvilKnight()
 let mapData = [
-  [new Empty(), new Tree(), new Empty(), new Empty(), new Empty()],
-  [new Empty(), new Tree(), new Empty(), new Empty(), new Tree()],
-  [new Empty(), new Empty(), new Empty(), new Tree(), new Empty()],
-  [new Empty(), new Empty(), new Empty(), new Empty(), new Empty()],
-  [new Empty(), new Player(), new Empty(), new Empty(), new Empty()]
+  [_tree, _stoneWall, _empty, _empty, _stoneWall, _empty],
+  [_empty, _stoneWall, _empty, _empty, _stoneWall, _tree],
+  [_tree, _stoneWall, _empty, _evilKnight, _stoneWall, _empty],
+  [_empty, _stoneWall, _empty, _empty, _stoneWall, _tree],
+  [_tree, _stoneWall, _player, _empty, _stoneWall, _empty]
 ]
 
 export default class Map extends React.Component{
@@ -47,8 +54,7 @@ export default class Map extends React.Component{
         playerCoord[0] = mapData.length - 1
       }
       this.setState({playerCoord: playerCoord})
-      console.log(this.props.console)
-      this.props.console.addHistory('你往 左上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)] )
+      this.props.console.addHistory('你往 左前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)] )
 
     } else if (i === 2) {
       let playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1]]
@@ -56,7 +62,7 @@ export default class Map extends React.Component{
         playerCoord[0] = mapData.length - 1
       }
       this.setState({playerCoord: playerCoord})
-      this.props.console.addHistory('你往 上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
+      this.props.console.addHistory('你往 前 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
 
     } else if (i === 3) {
       let playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1] + 1]
@@ -64,10 +70,10 @@ export default class Map extends React.Component{
         playerCoord[0] = mapData.length - 1
       }
       this.setState({playerCoord: playerCoord})
-      this.props.console.addHistory('你往 右上方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
+      this.props.console.addHistory('你往 右前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
 
     } else {
-      this.props.console.addHistory('你不能放那里走')
+      this.props.console.addHistory('你不能往那里走')
     }
   }
 
@@ -75,7 +81,7 @@ export default class Map extends React.Component{
     if (mapItem.meetText) {
       this.props.console.addHistory(mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
     } else {
-      this.props.console.addHistory('你不能放那里走')
+      this.props.console.addHistory('你不能往那里走')
     }
   }
 
@@ -105,7 +111,7 @@ export default class Map extends React.Component{
         } else {
           let mapItem = mapData[x][y]
           if (mapItem.name === "player") {
-            mapItem = new Empty()
+            mapItem = _empty
           }
 
           map[2 - i].push(mapItem)
@@ -117,10 +123,12 @@ export default class Map extends React.Component{
       }
     }
 
+    info = info.sort((a, b)=>parseInt(a[2].slice(1), 16) - parseInt(b[2].slice(1), 16))
+
     return (  <div className="map-panel">
                 <div className="map-instruction">
-                  <p> 背包 </p>
-                  <p>    </p>
+                  <p className="hp"> ♥♥♥♥♥♥♥♥♥♥ </p>
+                  <p className="energy">♦︎♦︎♦︎</p>
                   <p>  </p>
                 </div>
                 <div className="map">
