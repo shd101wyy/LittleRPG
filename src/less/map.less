@@ -2,12 +2,15 @@
   width: 800px;
   height: 500px;
   display: inline-block;
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    width: 300px;
+  }
 }
 
 .map-instruction {
   float: left;
   width: 200px;
-  margin-top: 200px;
   color: #c9c9c9;
   font-size: 16px;
   margin-top: 218px;
@@ -19,6 +22,14 @@
 
   .energy {
     color: #418aeb;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      margin: 0;
+    }
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    margin-top: 0;
   }
 }
 
@@ -30,23 +41,43 @@
   font-size: 32px;
   letter-spacing: 8px;
 
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    margin-top: 24px;
+  }
+
   .first {
     font-size: 44px;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      font-size: 30px;
+    }
   }
 
   .second {
     opacity: 1;
     font-size: 36px;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      font-size: 26px;
+    }
   }
 
   .third {
     opacity: 0.6;
     font-size: 28px;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      font-size: 20px;
+    }
   }
 
   .fourth {
     opacity: 0.3;
     font-size: 24px;
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      font-size: 16px;
+    }
   }
 
   .map-row {
@@ -89,4 +120,9 @@
   margin-top: 218px;
   width: 200px;
   text-align: left;
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    margin-top: 0;
+    width: 120px;
+  }
 }
