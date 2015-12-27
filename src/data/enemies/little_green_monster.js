@@ -9,7 +9,9 @@ export default class LittleGreenMonster extends BattleObject {
       color: '#5ec38f',
       meetText: ['你遇到了一个愤怒的绿色小妖，它向你冲了过来',
                  '一个绿色小妖挡住了你前进的路，你决定和他战斗到底'],
-      movable: true})
+      movable: true,
+      hp: 2,
+      qi: 1})
 
     this.isEnemy = true
     this.hp = 2

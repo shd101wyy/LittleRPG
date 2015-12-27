@@ -9,8 +9,6 @@ export default class Swordman extends BattleObject{
     this.hp = 1
     this.qi = 1
 
-    this.skills = []
-
     this.setLevel(lv)
   }
 

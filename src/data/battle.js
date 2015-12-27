@@ -10,7 +10,9 @@ export default class Battle extends React.Component {
       canEnterNextTurn: false,
       attackEnemy: false,
       NPCLoading: false, // 等待 NPC 完成动作
-      targets: []  // 技能释放对象
+      targets: [],  // 技能释放对象
+      win: false,
+      defeat: false
     }
 
     this.turn = 1;
@@ -43,9 +45,9 @@ export default class Battle extends React.Component {
   }
 
   clickSkill(skill) {
-    console.log('click skill ', skill)
+    // console.log('click skill ', skill)
     if (skill.qi > this.props.me.qi) {
-      console.log('气不够')
+      // console.log('气不够')
       console.addHistory([`你试图使用技能 ${skill.skillName}，但是发现 气 不够`,
                           `你的 气 不够了，无法使用技能 ${skill.skillName}`,
                          `你感到筋疲力尽，想使用技能 ${skill.skillName}，但是感到心有余而力不足`].randomPick())
@@ -93,12 +95,17 @@ export default class Battle extends React.Component {
     }
   }
 
+  leaveBattle() {
+    // console.log('leave battle')
+    this.props.console.leaveBattle()
+  }
+
   enterNextTurn() {
-    console.log('enter next turn')
+    // console.log('enter next turn')
     let skill = this.chosenSkill,
         targets = this.chosenTargets
-    console.log(skill)
-    console.log(targets)
+    // console.log(skill)
+    // console.log(targets)
 
     console.addHistory('-------------------------')
 
@@ -125,7 +132,7 @@ export default class Battle extends React.Component {
           if (i === enemies.length - 1) {
             this.setState({NPCLoading: false})
           }
-        }, 1000 * (i+1))
+        }, 800 * (i+1))
       }
     })
 
@@ -137,6 +144,18 @@ export default class Battle extends React.Component {
     this.chosenTargets = []
     this.turn++
     this.setState({canEnterNextTurn: false, skillInfo: null, chosenSkillName: null, attackEnemy: false, targets: []})
+
+    // check default
+    if (this.props.me.hp <= 0) {
+      this.setState({defeat: true})
+      return
+    }
+
+    // check enemies defeat
+    let enemiesLeft = enemies.filter(enemy => enemy.hp > 0).length
+    if (enemiesLeft === 0) {
+      this.setState({win: true})
+    }
   }
 
   render() {
@@ -145,21 +164,27 @@ export default class Battle extends React.Component {
 
     return  <div className="battle-panel">
               <div className="battle">
-                <div className="enemies">
-                  {enemies.map((enemy, i) => {
-                    if (enemy.hp <= 0) {
-                      return
-                    }
+                {
+                  (this.state.win || this.state.defeat) ?
+                  <div className="result-panel">
+                    <p className="title">{this.state.win ? '战斗胜利！' : '战斗失败。。'}</p>
+                  </div> :
+                  <div className="enemies">
+                    {enemies.map((enemy, i) => {
+                      if (enemy.hp <= 0) {
+                        return
+                      }
 
-                    return  <div className={"enemy" + (this.state.attackEnemy ? ' attack-target' : '') + (enemy.chosen ? ' chosen' : '')} key={i}
-                            onClick={this.state.attackEnemy ? this.chooseTarget.bind(this, enemy) : null}>
-                              <div className="ascii" style={{color: enemy.color}}> {enemy.ascii} </div>
-                              <div className="info"> {enemy.info} </div>
-                              <div className="hp"> {this.drawHp(enemy.hp)} </div>
-                              <div className="qi"> {this.drawQi(enemy.qi)} </div>
-                            </div>
-                  })}
-                </div>
+                      return  <div className={"enemy" + (this.state.attackEnemy ? ' attack-target' : '') + (enemy.chosen ? ' chosen' : '')} key={i}
+                              onClick={this.state.attackEnemy ? this.chooseTarget.bind(this, enemy) : null}>
+                                <div className="ascii" style={{color: enemy.color}}> {enemy.ascii} </div>
+                                <div className="info"> {enemy.info} </div>
+                                <div className="hp"> {this.drawHp(enemy.hp)} </div>
+                                <div className="qi"> {this.drawQi(enemy.qi)} </div>
+                              </div>
+                    })}
+                  </div>
+                }
                 <div className="friends">
                   <div className="friend">
                     <div className="ascii" style={{color: me.color}}> {me.ascii} </div>
@@ -190,8 +215,8 @@ export default class Battle extends React.Component {
                 {this.turn}
               </div>
               {this.state.NPCLoading ?
-                <div className="next-turn-waiting">
-                  请稍等...
+                <div className={"next-turn-waiting " + (this.state.win ? 'win' : '')} onClick={this.state.win ? this.leaveBattle.bind(this) : null}>
+                  {this.state.win ? '离开战场' : '请稍等...'}
                 </div> :
                 <div className={"next-turn " + (this.state.canEnterNextTurn ? 'available' : '')} onClick={this.state.canEnterNextTurn ? this.enterNextTurn.bind(this) : null}></div>
               }

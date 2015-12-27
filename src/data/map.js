@@ -3,6 +3,7 @@ import Tree from './objects/tree.js'
 import Player from './objects/player.js'
 import StoneWall from './objects/stone_wall.js'
 import EvilKnight from './enemies/evil_knight.js'
+import LittleGreenMonster from './enemies/little_green_monster.js'
 
 import React from 'react'
 
@@ -10,18 +11,22 @@ let _empty = new Empty(),
     _tree = new Tree(),
     _stoneWall = new StoneWall(),
     _player = new Player(),
-    _evilKnight = new EvilKnight()
+    _evilKnight = new EvilKnight(),
+    _littleGreenMonster = new LittleGreenMonster()
+
 let mapData = [
-  [_tree, _stoneWall, _empty, _empty, _stoneWall, _empty],
-  [_empty, _stoneWall, _empty, _empty, _stoneWall, _tree],
-  [_tree, _stoneWall, _empty, _evilKnight, _stoneWall, _empty],
-  [_empty, _stoneWall, _empty, _empty, _stoneWall, _tree],
-  [_tree, _stoneWall, _player, _empty, _stoneWall, _empty]
+  [ _empty, _empty, _empty, _empty, ],
+  [ _empty, _empty, _tree, _empty, ],
+  [ _empty, _empty, _littleGreenMonster, _empty, ],
+  [ _empty, _empty, _empty,  _tree],
+  [ _empty, _player, _empty, _empty, ]
 ]
 
 export default class Map extends React.Component{
   constructor(props) {
     super(props)
+
+    console.log("创建地图")
 
     let playerCoord = this.getPlayerCoordinate(),
         player = mapData[playerCoord[0]][playerCoord[1]]
@@ -54,7 +59,11 @@ export default class Map extends React.Component{
         playerCoord[0] = mapData.length - 1
       }
       this.setState({playerCoord: playerCoord})
-      this.props.console.addHistory('你往 左前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)] )
+      console.addHistory('你往 左前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)] )
+
+      if (mapItem.isEnemy) {
+        this.props.console.enterBattle([mapItem])
+      }
 
     } else if (i === 2) {
       let playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1]]
@@ -62,7 +71,11 @@ export default class Map extends React.Component{
         playerCoord[0] = mapData.length - 1
       }
       this.setState({playerCoord: playerCoord})
-      this.props.console.addHistory('你往 前 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
+      console.addHistory('你往 前 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
+
+      if (mapItem.isEnemy) {
+        this.props.console.enterBattle([mapItem])
+      }
 
     } else if (i === 3) {
       let playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1] + 1]
@@ -70,19 +83,39 @@ export default class Map extends React.Component{
         playerCoord[0] = mapData.length - 1
       }
       this.setState({playerCoord: playerCoord})
-      this.props.console.addHistory('你往 右前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
+      console.addHistory('你往 右前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
+
+      if (mapItem.isEnemy) {
+        this.props.console.enterBattle([mapItem])
+      }
 
     } else {
-      this.props.console.addHistory('你不能往那里走')
+      console.addHistory('你不能往那里走')
     }
   }
 
   playerCannotMove(mapItem) {
     if (mapItem.meetText) {
-      this.props.console.addHistory(mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
+      console.addHistory(mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)])
     } else {
-      this.props.console.addHistory('你不能往那里走')
+      console.addHistory('你不能往那里走')
     }
+  }
+
+  drawHp(num) {
+    let output = ''
+    for (let i = 0; i < num; i++) {
+      output += '♥'
+    }
+    return output
+  }
+
+  drawQi(num) {
+    let output = ''
+    for (let i = 0; i < num; i++) {
+      output += '♦︎'
+    }
+    return output
   }
 
   render() {
@@ -127,8 +160,8 @@ export default class Map extends React.Component{
 
     return (  <div className="map-panel">
                 <div className="map-instruction">
-                  <p className="hp"> ♥♥♥♥♥♥♥♥♥♥ </p>
-                  <p className="energy">♦︎♦︎♦︎</p>
+                  <p className="hp"> {this.drawHp(this.props.console.player.hp)} </p>
+                  <p className="energy">{this.drawQi(this.props.console.player.qi)}</p>
                   <p>  </p>
                 </div>
                 <div className="map">

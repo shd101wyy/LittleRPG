@@ -5,8 +5,11 @@ export default class BattleObject extends GameObject {
     super(gameObjectProps)
 
     this.skills = []
-    this.hp = 0
-    this.qi = 0
+    this.hp = gameObjectProps.hp
+    this.qi = gameObjectProps.qi
+
+    this.default_hp = this.hp 
+    this.default_qi = this.qi
   }
 
   /*
@@ -82,5 +85,11 @@ export default class BattleObject extends GameObject {
     }
 
     return autoAc()
+  }
+
+  // restore default hp and qi
+  revive() {
+    this.hp = this.default_hp
+    this.qi = this.default_qi
   }
 }

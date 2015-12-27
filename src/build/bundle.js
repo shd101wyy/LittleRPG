@@ -19693,7 +19693,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n  overflow: hidden;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-panel {\n    width: 300px;\n  }\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  color: #c9c9c9;\n  font-size: 16px;\n  margin-top: 218px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map-instruction .hp {\n  color: #d95858;\n}\n.map-instruction .energy {\n  color: #418aeb;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction .energy {\n    margin: 0;\n  }\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction {\n    margin-top: 0;\n  }\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map {\n    margin-top: 24px;\n  }\n}\n.map .first {\n  font-size: 44px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .first {\n    font-size: 30px;\n  }\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .second {\n    font-size: 26px;\n  }\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .third {\n    font-size: 20px;\n  }\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .fourth {\n    font-size: 16px;\n  }\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-info {\n    margin-top: 0;\n    width: 120px;\n  }\n}\n.battle-panel {\n  position: relative;\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .battle-panel {\n    width: 300px;\n  }\n}\n.battle-panel .battle {\n  width: 600px;\n  height: 100%;\n  float: left;\n}\n.battle-panel .battle .enemies {\n  width: 100%;\n  height: 200px;\n  border-bottom: 3px solid #383838;\n  padding: 0;\n  margin-top: 100px;\n}\n.battle-panel .battle .enemies .enemy {\n  float: left;\n  width: 120px;\n  height: 120px;\n  margin-right: 40px;\n}\n.battle-panel .battle .enemies .enemy.attack-target {\n  background-color: #454545;\n}\n.battle-panel .battle .enemies .enemy.attack-target:hover {\n  cursor: pointer;\n}\n.battle-panel .battle .enemies .enemy.attack-target.chosen {\n  background-color: #811E1E;\n}\n.battle-panel .battle .friends {\n  width: 100%;\n  height: 200px;\n  padding: 0;\n  margin-top: 36px;\n}\n.battle-panel .battle .friends .friend {\n  float: left;\n  width: 120px;\n  height: 120px;\n}\n.battle-panel .battle .ascii {\n  font-size: 48px;\n}\n.battle-panel .battle .info {\n  color: #c9c9c9;\n  font-size: 16px;\n}\n.battle-panel .battle .hp {\n  color: #d95858;\n  font-size: 16px;\n  text-align: left;\n  padding-left: 10px;\n}\n.battle-panel .battle .qi {\n  color: #418aeb;\n  font-size: 16px;\n  text-align: left;\n  padding-left: 10px;\n}\n.battle-panel .skills {\n  position: relative;\n  width: 200px;\n  height: 400px;\n  float: left;\n  color: #c9c9c9;\n  padding-top: 100px;\n}\n.battle-panel .skills .title {\n  font-size: 16px;\n}\n.battle-panel .skills .skill {\n  padding: 2px;\n  border: 1px solid #383838;\n  margin-left: 30px;\n}\n.battle-panel .skills .skill:hover {\n  cursor: pointer;\n  background-color: #333333;\n}\n.battle-panel .skills .skill.chosen {\n  border: 1px solid #8E8E8E;\n  background-color: #1C6734;\n}\n.battle-panel .skills .skill-info {\n  width: 150px;\n  height: 150px;\n  text-align: left;\n  padding: 10px 15px;\n  border: 1px solid #383838;\n  position: absolute;\n  top: 100px;\n  left: 199px;\n  background-color: #454545;\n}\n.battle-panel .skills .skill-info .skill-name {\n  font-size: 20px;\n}\n.battle-panel .turn {\n  position: absolute;\n  color: #c9c9c9;\n  font-size: 32px;\n  left: 290px;\n  top: 282px;\n  background-color: #222222;\n  padding: 0 20px;\n}\n.battle-panel .next-turn-waiting {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  color: #c9c9c9;\n  border: 1px solid #454545;\n  width: 150px;\n  padding: 10px;\n  background-color: #383838;\n}\n.battle-panel .next-turn {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  color: #c9c9c9;\n  border: 1px solid #454545;\n  width: 150px;\n  padding: 10px;\n  background-color: #383838;\n}\n.battle-panel .next-turn:hover {\n  cursor: pointer;\n  background-color: #454545;\n}\n.battle-panel .next-turn::after {\n  content: \"\\8BF7\\5148\\9009\\62E9\\6280\\80FD\";\n}\n.battle-panel .next-turn.available {\n  background-color: #30834B;\n}\n.battle-panel .next-turn.available::after {\n  content: \"\\4E0B\\4E00\\56DE\\5408\";\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: scroll;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console {\n    width: 200px;\n    height: 250px;\n    position: absolute;\n    padding-right: 10px;\n    right: 0;\n    bottom: 0;\n  }\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console .history {\n    font-size: 14px;\n  }\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n  overflow: hidden;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-panel {\n    width: 300px;\n  }\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  color: #c9c9c9;\n  font-size: 16px;\n  margin-top: 218px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map-instruction .hp {\n  color: #d95858;\n}\n.map-instruction .energy {\n  color: #418aeb;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction .energy {\n    margin: 0;\n  }\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction {\n    margin-top: 0;\n  }\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map {\n    margin-top: 24px;\n  }\n}\n.map .first {\n  font-size: 44px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .first {\n    font-size: 30px;\n  }\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .second {\n    font-size: 26px;\n  }\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .third {\n    font-size: 20px;\n  }\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .fourth {\n    font-size: 16px;\n  }\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-info {\n    margin-top: 0;\n    width: 120px;\n  }\n}\n.battle-panel {\n  position: relative;\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .battle-panel {\n    width: 300px;\n  }\n}\n.battle-panel .battle {\n  width: 600px;\n  height: 100%;\n  float: left;\n}\n.battle-panel .battle .result-panel {\n  width: 100%;\n  height: 200px;\n  border-bottom: 3px solid #383838;\n  padding: 0;\n  margin-top: 100px;\n}\n.battle-panel .battle .result-panel .title {\n  font-size: 48px;\n  color: #C9C9C9;\n}\n.battle-panel .battle .enemies {\n  width: 100%;\n  height: 200px;\n  border-bottom: 3px solid #383838;\n  padding: 0;\n  margin-top: 100px;\n}\n.battle-panel .battle .enemies .enemy {\n  float: left;\n  width: 120px;\n  height: 120px;\n  margin-right: 40px;\n}\n.battle-panel .battle .enemies .enemy.attack-target {\n  background-color: #454545;\n}\n.battle-panel .battle .enemies .enemy.attack-target:hover {\n  cursor: pointer;\n}\n.battle-panel .battle .enemies .enemy.attack-target.chosen {\n  background-color: #811E1E;\n}\n.battle-panel .battle .friends {\n  width: 100%;\n  height: 200px;\n  padding: 0;\n  margin-top: 36px;\n}\n.battle-panel .battle .friends .friend {\n  float: left;\n  width: 120px;\n  height: 120px;\n}\n.battle-panel .battle .ascii {\n  font-size: 48px;\n}\n.battle-panel .battle .info {\n  color: #c9c9c9;\n  font-size: 16px;\n}\n.battle-panel .battle .hp {\n  color: #d95858;\n  font-size: 16px;\n  text-align: left;\n  padding-left: 10px;\n}\n.battle-panel .battle .qi {\n  color: #418aeb;\n  font-size: 16px;\n  text-align: left;\n  padding-left: 10px;\n}\n.battle-panel .skills {\n  position: relative;\n  width: 200px;\n  height: 400px;\n  float: left;\n  color: #c9c9c9;\n  padding-top: 100px;\n}\n.battle-panel .skills .title {\n  font-size: 16px;\n}\n.battle-panel .skills .skill {\n  padding: 2px;\n  border: 1px solid #383838;\n  margin-left: 30px;\n}\n.battle-panel .skills .skill:hover {\n  cursor: pointer;\n  background-color: #333333;\n}\n.battle-panel .skills .skill.chosen {\n  border: 1px solid #8E8E8E;\n  background-color: #1C6734;\n}\n.battle-panel .skills .skill-info {\n  width: 150px;\n  height: 150px;\n  text-align: left;\n  padding: 10px 15px;\n  border: 1px solid #383838;\n  position: absolute;\n  top: 100px;\n  left: 199px;\n  background-color: #454545;\n}\n.battle-panel .skills .skill-info .skill-name {\n  font-size: 20px;\n}\n.battle-panel .turn {\n  position: absolute;\n  color: #c9c9c9;\n  font-size: 32px;\n  left: 290px;\n  top: 282px;\n  background-color: #222222;\n  padding: 0 20px;\n}\n.battle-panel .next-turn-waiting {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  color: #c9c9c9;\n  border: 1px solid #454545;\n  width: 150px;\n  padding: 10px;\n  background-color: #383838;\n}\n.battle-panel .next-turn-waiting.win {\n  background-color: #387ED4;\n}\n.battle-panel .next-turn-waiting.win:hover {\n  cursor: pointer;\n}\n.battle-panel .next-turn {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  color: #c9c9c9;\n  border: 1px solid #454545;\n  width: 150px;\n  padding: 10px;\n  background-color: #383838;\n}\n.battle-panel .next-turn:hover {\n  cursor: pointer;\n  background-color: #454545;\n}\n.battle-panel .next-turn::after {\n  content: \"\\8BF7\\5148\\9009\\62E9\\6280\\80FD\";\n}\n.battle-panel .next-turn.available {\n  background-color: #30834B;\n}\n.battle-panel .next-turn.available::after {\n  content: \"\\4E0B\\4E00\\56DE\\5408\";\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: scroll;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console {\n    width: 200px;\n    height: 250px;\n    position: absolute;\n    padding-right: 10px;\n    right: 0;\n    bottom: 0;\n  }\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console .history {\n    font-size: 14px;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -20057,16 +20057,19 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Console).call(this, props));
 
 	    _this.state = {
-	      texts: ["你进入了暮色森林"]
+	      texts: ["你进入了暮色森林"],
+	      battle: null
 	    };
-
-	    _this.battle = _react2.default.createElement(
-	      _battle2.default,
-	      { console: _this,
-	        enemies: [new _little_green_monster2.default(), new _little_green_monster2.default()],
-	        me: new _swordman2.default(2) },
+	    /*
+	    this.battle = <Battle console={this}
+	            enemies={[new LittleGreenMonster(), new LittleGreenMonster()]}
+	            me={new Swordman(2)}> </Battle>*/
+	    _this.map = _react2.default.createElement(
+	      _map2.default,
+	      { console: _this },
 	      ' '
 	    );
+	    _this.player = new _swordman2.default(5);
 
 	    console.addHistory = _this.addHistory.bind(_this);
 	    return _this;
@@ -20078,6 +20081,27 @@
 	      var texts = this.state.texts;
 	      texts.push(text);
 	      this.setState({ texts: texts });
+	    }
+	  }, {
+	    key: 'enterBattle',
+	    value: function enterBattle(enemies) {
+	      enemies.forEach(function (enemy) {
+	        return enemy.revive();
+	      });
+	      this.battle = _react2.default.createElement(
+	        _battle2.default,
+	        { console: this,
+	          enemies: enemies,
+	          me: this.player },
+	        ' '
+	      );
+	      this.setState({ inBattle: true });
+	    }
+	  }, {
+	    key: 'leaveBattle',
+	    value: function leaveBattle() {
+	      this.battle = null;
+	      this.setState({ inBattle: false });
 	    }
 	  }, {
 	    key: 'render',
@@ -20095,7 +20119,14 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        this.battle,
+	        this.state.inBattle ? this.battle : null,
+	        _react2.default.createElement(
+	          'div',
+	          { style: { display: this.state.inBattle ? 'none' : 'block' } },
+	          ' ',
+	          this.map,
+	          ' '
+	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'console' },
@@ -20142,6 +20173,10 @@
 
 	var _evil_knight2 = _interopRequireDefault(_evil_knight);
 
+	var _little_green_monster = __webpack_require__(176);
+
+	var _little_green_monster2 = _interopRequireDefault(_little_green_monster);
+
 	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -20158,8 +20193,10 @@
 	    _tree = new _tree3.default(),
 	    _stoneWall = new _stone_wall2.default(),
 	    _player = new _player3.default(),
-	    _evilKnight = new _evil_knight2.default();
-	var mapData = [[_tree, _stoneWall, _empty, _empty, _stoneWall, _empty], [_empty, _stoneWall, _empty, _empty, _stoneWall, _tree], [_tree, _stoneWall, _empty, _evilKnight, _stoneWall, _empty], [_empty, _stoneWall, _empty, _empty, _stoneWall, _tree], [_tree, _stoneWall, _player, _empty, _stoneWall, _empty]];
+	    _evilKnight = new _evil_knight2.default(),
+	    _littleGreenMonster = new _little_green_monster2.default();
+
+	var mapData = [[_empty, _empty, _empty, _empty], [_empty, _empty, _tree, _empty], [_empty, _empty, _littleGreenMonster, _empty], [_empty, _empty, _empty, _tree], [_empty, _player, _empty, _empty]];
 
 	var Map = (function (_React$Component) {
 	  _inherits(Map, _React$Component);
@@ -20168,6 +20205,8 @@
 	    _classCallCheck(this, Map);
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Map).call(this, props));
+
+	    console.log("创建地图");
 
 	    var playerCoord = _this.getPlayerCoordinate(),
 	        player = mapData[playerCoord[0]][playerCoord[1]];
@@ -20206,33 +20245,63 @@
 	          playerCoord[0] = mapData.length - 1;
 	        }
 	        this.setState({ playerCoord: playerCoord });
-	        this.props.console.addHistory('你往 左前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	        console.addHistory('你往 左前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+
+	        if (mapItem.isEnemy) {
+	          this.props.console.enterBattle([mapItem]);
+	        }
 	      } else if (i === 2) {
 	        var playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1]];
 	        if (playerCoord[0] < 0) {
 	          playerCoord[0] = mapData.length - 1;
 	        }
 	        this.setState({ playerCoord: playerCoord });
-	        this.props.console.addHistory('你往 前 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	        console.addHistory('你往 前 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+
+	        if (mapItem.isEnemy) {
+	          this.props.console.enterBattle([mapItem]);
+	        }
 	      } else if (i === 3) {
 	        var playerCoord = [this.state.playerCoord[0] - 1, this.state.playerCoord[1] + 1];
 	        if (playerCoord[0] < 0) {
 	          playerCoord[0] = mapData.length - 1;
 	        }
 	        this.setState({ playerCoord: playerCoord });
-	        this.props.console.addHistory('你往 右前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	        console.addHistory('你往 右前方 走了。 ' + mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+
+	        if (mapItem.isEnemy) {
+	          this.props.console.enterBattle([mapItem]);
+	        }
 	      } else {
-	        this.props.console.addHistory('你不能往那里走');
+	        console.addHistory('你不能往那里走');
 	      }
 	    }
 	  }, {
 	    key: 'playerCannotMove',
 	    value: function playerCannotMove(mapItem) {
 	      if (mapItem.meetText) {
-	        this.props.console.addHistory(mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
+	        console.addHistory(mapItem.meetText[Math.floor(Math.random() * mapItem.meetText.length)]);
 	      } else {
-	        this.props.console.addHistory('你不能往那里走');
+	        console.addHistory('你不能往那里走');
 	      }
+	    }
+	  }, {
+	    key: 'drawHp',
+	    value: function drawHp(num) {
+	      var output = '';
+	      for (var i = 0; i < num; i++) {
+	        output += '♥';
+	      }
+	      return output;
+	    }
+	  }, {
+	    key: 'drawQi',
+	    value: function drawQi(num) {
+	      var output = '';
+	      for (var i = 0; i < num; i++) {
+	        output += '♦︎';
+	      }
+	      return output;
 	    }
 	  }, {
 	    key: 'render',
@@ -20288,12 +20357,14 @@
 	          _react2.default.createElement(
 	            'p',
 	            { className: 'hp' },
-	            ' ♥♥♥♥♥♥♥♥♥♥ '
+	            ' ',
+	            this.drawHp(this.props.console.player.hp),
+	            ' '
 	          ),
 	          _react2.default.createElement(
 	            'p',
 	            { className: 'energy' },
-	            '♦︎♦︎♦︎'
+	            this.drawQi(this.props.console.player.qi)
 	          ),
 	          _react2.default.createElement(
 	            'p',
@@ -20704,7 +20775,9 @@
 	      canEnterNextTurn: false,
 	      attackEnemy: false,
 	      NPCLoading: false, // 等待 NPC 完成动作
-	      targets: [] // 技能释放对象
+	      targets: [], // 技能释放对象
+	      win: false,
+	      defeat: false
 	    };
 
 	    _this.turn = 1;
@@ -20744,9 +20817,9 @@
 	  }, {
 	    key: 'clickSkill',
 	    value: function clickSkill(skill) {
-	      console.log('click skill ', skill);
+	      // console.log('click skill ', skill)
 	      if (skill.qi > this.props.me.qi) {
-	        console.log('气不够');
+	        // console.log('气不够')
 	        console.addHistory(['你试图使用技能 ' + skill.skillName + '，但是发现 气 不够', '你的 气 不够了，无法使用技能 ' + skill.skillName, '你感到筋疲力尽，想使用技能 ' + skill.skillName + '，但是感到心有余而力不足'].randomPick());
 	        return;
 	      }
@@ -20793,15 +20866,21 @@
 	      }
 	    }
 	  }, {
+	    key: 'leaveBattle',
+	    value: function leaveBattle() {
+	      // console.log('leave battle')
+	      this.props.console.leaveBattle();
+	    }
+	  }, {
 	    key: 'enterNextTurn',
 	    value: function enterNextTurn() {
 	      var _this2 = this;
 
-	      console.log('enter next turn');
+	      // console.log('enter next turn')
 	      var skill = this.chosenSkill,
 	          targets = this.chosenTargets;
-	      console.log(skill);
-	      console.log(targets);
+	      // console.log(skill)
+	      // console.log(targets)
 
 	      console.addHistory('-------------------------');
 
@@ -20829,7 +20908,7 @@
 	            if (i === enemies.length - 1) {
 	              _this2.setState({ NPCLoading: false });
 	            }
-	          }, 1000 * (i + 1));
+	          }, 800 * (i + 1));
 	        }
 	      });
 
@@ -20841,6 +20920,20 @@
 	      this.chosenTargets = [];
 	      this.turn++;
 	      this.setState({ canEnterNextTurn: false, skillInfo: null, chosenSkillName: null, attackEnemy: false, targets: [] });
+
+	      // check default
+	      if (this.props.me.hp <= 0) {
+	        this.setState({ defeat: true });
+	        return;
+	      }
+
+	      // check enemies defeat
+	      var enemiesLeft = enemies.filter(function (enemy) {
+	        return enemy.hp > 0;
+	      }).length;
+	      if (enemiesLeft === 0) {
+	        this.setState({ win: true });
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -20856,7 +20949,15 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'battle' },
-	          _react2.default.createElement(
+	          this.state.win || this.state.defeat ? _react2.default.createElement(
+	            'div',
+	            { className: 'result-panel' },
+	            _react2.default.createElement(
+	              'p',
+	              { className: 'title' },
+	              this.state.win ? '战斗胜利！' : '战斗失败。。'
+	            )
+	          ) : _react2.default.createElement(
 	            'div',
 	            { className: 'enemies' },
 	            enemies.map(function (enemy, i) {
@@ -20980,8 +21081,8 @@
 	        ),
 	        this.state.NPCLoading ? _react2.default.createElement(
 	          'div',
-	          { className: 'next-turn-waiting' },
-	          '请稍等...'
+	          { className: "next-turn-waiting " + (this.state.win ? 'win' : ''), onClick: this.state.win ? this.leaveBattle.bind(this) : null },
+	          this.state.win ? '离开战场' : '请稍等...'
 	        ) : _react2.default.createElement('div', { className: "next-turn " + (this.state.canEnterNextTurn ? 'available' : ''), onClick: this.state.canEnterNextTurn ? this.enterNextTurn.bind(this) : null })
 	      );
 	    }
@@ -21033,7 +21134,9 @@
 	      info: '绿色小妖',
 	      color: '#5ec38f',
 	      meetText: ['你遇到了一个愤怒的绿色小妖，它向你冲了过来', '一个绿色小妖挡住了你前进的路，你决定和他战斗到底'],
-	      movable: true }));
+	      movable: true,
+	      hp: 2,
+	      qi: 1 }));
 
 	    _this.isEnemy = true;
 	    _this.hp = 2;
@@ -21107,8 +21210,6 @@
 
 	    _this.hp = 1;
 	    _this.qi = 1;
-
-	    _this.skills = [];
 
 	    _this.setLevel(lv);
 	    return _this;
@@ -21272,8 +21373,11 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BattleObject).call(this, gameObjectProps));
 
 	    _this.skills = [];
-	    _this.hp = 0;
-	    _this.qi = 0;
+	    _this.hp = gameObjectProps.hp;
+	    _this.qi = gameObjectProps.qi;
+
+	    _this.default_hp = _this.hp;
+	    _this.default_qi = _this.qi;
 	    return _this;
 	  }
 
@@ -21371,6 +21475,15 @@
 	      };
 
 	      return autoAc();
+	    }
+
+	    // restore default hp and qi
+
+	  }, {
+	    key: "revive",
+	    value: function revive() {
+	      this.hp = this.default_hp;
+	      this.qi = this.default_qi;
 	    }
 	  }]);
 
