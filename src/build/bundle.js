@@ -19689,7 +19689,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n  overflow: hidden;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-panel {\n    width: 300px;\n  }\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  color: #c9c9c9;\n  font-size: 16px;\n  margin-top: 218px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map-instruction .hp {\n  color: #d95858;\n}\n.map-instruction .energy {\n  color: #418aeb;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction .energy {\n    margin: 0;\n  }\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction {\n    margin-top: 0;\n  }\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map {\n    margin-top: 24px;\n  }\n}\n.map .first {\n  font-size: 44px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .first {\n    font-size: 30px;\n  }\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .second {\n    font-size: 26px;\n  }\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .third {\n    font-size: 20px;\n  }\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .fourth {\n    font-size: 16px;\n  }\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-info {\n    margin-top: 0;\n    width: 120px;\n  }\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: hidden;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console {\n    width: 200px;\n    height: 250px;\n    position: absolute;\n    padding-right: 10px;\n    right: 0;\n    bottom: 0;\n  }\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  background: linear-gradient(to top, rgba(35, 35, 35, 0.99) 0%, rgba(26, 26, 26, 0) 100%);\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console .history {\n    font-size: 14px;\n  }\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n  overflow: hidden;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-panel {\n    width: 300px;\n  }\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  color: #c9c9c9;\n  font-size: 16px;\n  margin-top: 218px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map-instruction .hp {\n  color: #d95858;\n}\n.map-instruction .energy {\n  color: #418aeb;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction .energy {\n    margin: 0;\n  }\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction {\n    margin-top: 0;\n  }\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map {\n    margin-top: 24px;\n  }\n}\n.map .first {\n  font-size: 44px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .first {\n    font-size: 30px;\n  }\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .second {\n    font-size: 26px;\n  }\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .third {\n    font-size: 20px;\n  }\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .fourth {\n    font-size: 16px;\n  }\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-info {\n    margin-top: 0;\n    width: 120px;\n  }\n}\n.battle-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .battle-panel {\n    width: 300px;\n  }\n}\n.battle-panel .battle {\n  width: 600px;\n  height: 100%;\n  float: left;\n}\n.battle-panel .battle .enemies {\n  width: 100%;\n  height: 200px;\n  border-bottom: 3px solid #383838;\n  padding: 0;\n  margin-top: 100px;\n}\n.battle-panel .battle .enemies .enemy {\n  float: left;\n  width: 120px;\n  height: 120px;\n  margin-right: 40px;\n}\n.battle-panel .battle .friends {\n  width: 100%;\n  height: 200px;\n  padding: 0;\n  margin-top: 36px;\n}\n.battle-panel .battle .friends .friend {\n  float: left;\n  width: 120px;\n  height: 120px;\n}\n.battle-panel .battle .ascii {\n  font-size: 48px;\n}\n.battle-panel .battle .info {\n  color: #c9c9c9;\n  font-size: 16px;\n}\n.battle-panel .battle .hp {\n  color: #d95858;\n  font-size: 16px;\n  text-align: left;\n}\n.battle-panel .battle .qi {\n  color: #418aeb;\n  font-size: 16px;\n  text-align: left;\n}\n.battle-panel .skills {\n  position: relative;\n  width: 200px;\n  height: 400px;\n  float: left;\n  color: #c9c9c9;\n  padding-top: 100px;\n}\n.battle-panel .skills .title {\n  font-size: 16px;\n}\n.battle-panel .skills .skill {\n  padding: 2px;\n  border: 1px solid #383838;\n  margin-left: 30px;\n}\n.battle-panel .skills .skill:hover {\n  cursor: pointer;\n  background-color: #333333;\n}\n.battle-panel .skills .skill-info {\n  width: 150px;\n  height: 150px;\n  text-align: left;\n  padding: 10px 15px;\n  border: 1px solid #383838;\n  position: absolute;\n  top: 100px;\n  left: 199px;\n  background-color: #454545;\n}\n.battle-panel .skills .skill-info .skill-name {\n  font-size: 20px;\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: hidden;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console {\n    width: 200px;\n    height: 250px;\n    position: absolute;\n    padding-right: 10px;\n    right: 0;\n    bottom: 0;\n  }\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  background: linear-gradient(to top, rgba(35, 35, 35, 0.99) 0%, rgba(26, 26, 26, 0) 100%);\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console .history {\n    font-size: 14px;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -20024,6 +20024,18 @@
 
 	var _map2 = _interopRequireDefault(_map);
 
+	var _battle = __webpack_require__(174);
+
+	var _battle2 = _interopRequireDefault(_battle);
+
+	var _swordman = __webpack_require__(177);
+
+	var _swordman2 = _interopRequireDefault(_swordman);
+
+	var _little_green_monster = __webpack_require__(176);
+
+	var _little_green_monster2 = _interopRequireDefault(_little_green_monster);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20070,8 +20082,10 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          _map2.default,
-	          { console: this },
+	          _battle2.default,
+	          { console: this,
+	            enemies: [new _little_green_monster2.default(), new _little_green_monster2.default()],
+	            me: new _swordman2.default(1) },
 	          ' '
 	        ),
 	        _react2.default.createElement(
@@ -20525,6 +20539,8 @@
 
 	'use strict';
 
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
@@ -20547,8 +20563,29 @@
 	  function Player() {
 	    _classCallCheck(this, Player);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Player).call(this, { name: 'player', ascii: '@', info: '玩家', color: '#FFF92B' }));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Player).call(this, { name: 'player', ascii: '@', info: '玩家', color: '#FFF92B' }));
+
+	    _this.skills = [];
+	    return _this;
 	  }
+
+	  _createClass(Player, [{
+	    key: 'addSkill',
+	    value: function addSkill(skillName, func, info) {
+	      var found = false;
+	      for (var i = 0; i < this.skills.length; i++) {
+	        if (this.skills[i].skillName === skillName) {
+	          found = true;
+	          this.skills[i] = { skillName: skillName, func: func, info: info }; // upgrade existed skill
+	          break;
+	        }
+	      }
+
+	      if (!found) {
+	        this.skills.push({ skillName: skillName, func: func, info: info }); // learn new skill
+	      }
+	    }
+	  }]);
 
 	  return Player;
 	})(_game_object2.default);
@@ -20643,6 +20680,391 @@
 	})(_game_object2.default);
 
 	exports.default = EvilKnight;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Battle = (function (_React$Component) {
+	  _inherits(Battle, _React$Component);
+
+	  function Battle(props) {
+	    _classCallCheck(this, Battle);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Battle).call(this, props));
+
+	    _this.state = {
+	      skillInfo: null
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Battle, [{
+	    key: 'drawHp',
+	    value: function drawHp(num) {
+	      var output = '';
+	      for (var i = 0; i < num; i++) {
+	        output += '♥';
+	      }
+	      return output;
+	    }
+	  }, {
+	    key: 'drawQi',
+	    value: function drawQi(num) {
+	      var output = '';
+	      for (var i = 0; i < num; i++) {
+	        output += '♦︎';
+	      }
+	      return output;
+	    }
+	  }, {
+	    key: 'showSkillInfo',
+	    value: function showSkillInfo(skillName, info) {
+	      this.setState({ skillInfo: info, skillName: skillName });
+	    }
+	  }, {
+	    key: 'hideSkillInfo',
+	    value: function hideSkillInfo() {
+	      this.setState({ skillInfo: null });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var enemies = this.props.enemies,
+	          me = this.props.me;
+	      console.log(me);
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'battle-panel' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'battle' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'enemies' },
+	            enemies.map(function (enemy, i) {
+	              console.log(enemy);
+	              return _react2.default.createElement(
+	                'div',
+	                { className: 'enemy', key: i },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'ascii', style: { color: enemy.color } },
+	                  ' ',
+	                  enemy.ascii,
+	                  ' '
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'info' },
+	                  ' ',
+	                  enemy.info,
+	                  ' '
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'hp' },
+	                  ' ',
+	                  _this2.drawHp(enemy.hp),
+	                  ' '
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'qi' },
+	                  ' ',
+	                  _this2.drawQi(enemy.qi),
+	                  ' '
+	                )
+	              );
+	            })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'friends' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'friend' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'ascii', style: { color: me.color } },
+	                ' ',
+	                me.ascii,
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'info' },
+	                ' ',
+	                me.careerInfo + '（你）',
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'hp' },
+	                ' ',
+	                this.drawHp(me.hp),
+	                ' '
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'qi' },
+	                ' ',
+	                this.drawQi(me.qi),
+	                ' '
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'skills' },
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'title' },
+	            ' 技能 '
+	          ),
+	          me.skills.map(function (skill, i) {
+	            console.log(skill);
+	            return _react2.default.createElement(
+	              'div',
+	              { className: 'skill', key: i, onMouseOver: _this2.showSkillInfo.bind(_this2, skill.skillName, skill.info), onMouseLeave: _this2.hideSkillInfo.bind(_this2) },
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                ' ',
+	                skill.skillName,
+	                ' '
+	              )
+	            );
+	          }),
+	          this.state.skillInfo ? _react2.default.createElement(
+	            'div',
+	            { className: 'skill-info', ref: 'skillInfo' },
+	            _react2.default.createElement(
+	              'p',
+	              { className: 'skill-name' },
+	              ' ',
+	              this.state.skillName,
+	              ' '
+	            ),
+	            this.state.skillInfo
+	          ) : null
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Battle;
+	})(_react2.default.Component);
+
+	/*
+	  Props:
+	  enemies: [e1, e2, e3]
+	  me: [Career]
+	 */
+
+	exports.default = Battle;
+
+/***/ },
+/* 175 */,
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _game_object = __webpack_require__(169);
+
+	var _game_object2 = _interopRequireDefault(_game_object);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var LittleGreenMonster = (function (_GameObject) {
+	  _inherits(LittleGreenMonster, _GameObject);
+
+	  function LittleGreenMonster() {
+	    _classCallCheck(this, LittleGreenMonster);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(LittleGreenMonster).call(this, {
+	      name: 'little green monster',
+	      ascii: 'g',
+	      info: '绿色小妖',
+	      color: '#5ec38f',
+	      meetText: ['你遇到了一个愤怒的绿色小妖，它向你冲了过来', '一个绿色小妖挡住了你前进的路，你决定和他战斗到底'],
+	      movable: true }));
+
+	    _this.isEnemy = true;
+	    _this.hp = 2;
+	    _this.qi = 1;
+
+	    _this.skills = [{ skillName: '聚气', func: function func() {
+	        _this.qi += 1;
+	      }, info: '聚集 1 气' }, { skillName: '撞击', func: function func(enemy) {
+	        _this.damage = 1;
+	        if (enemy.defence) {
+	          enemy.defence -= damage;
+	        } else {
+	          enemy.hp -= damage;
+	        }
+	      }, info: '消耗 1 气，对单体敌人造成 1 伤害' }];
+	    return _this;
+	  }
+
+	  return LittleGreenMonster;
+	})(_game_object2.default);
+
+	exports.default = LittleGreenMonster;
+
+/***/ },
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _player = __webpack_require__(171);
+
+	var _player2 = _interopRequireDefault(_player);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Swordman = (function (_Player) {
+	  _inherits(Swordman, _Player);
+
+	  function Swordman(lv) {
+	    _classCallCheck(this, Swordman);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Swordman).call(this));
+
+	    _this.careerName = "swordman";
+	    _this.careerInfo = "剑客";
+
+	    _this.hp = 1;
+	    _this.qi = 1;
+
+	    _this.skills = [];
+
+	    _this.setLevel(lv);
+	    return _this;
+	  }
+
+	  _createClass(Swordman, [{
+	    key: "setLevel",
+	    value: function setLevel(lv) {
+	      var _this2 = this;
+
+	      if (lv >= 30) {
+	        // 满级了
+	        this.hp = 10;
+	        this.qi = 4;
+
+	        this.addSkill('聚气', function () {
+	          _this2.qi += 4;
+	        }, '增加 4 点气');
+	      } else if (lv >= 25) {
+	        this.hp = 8;
+	        this.qi = 4;
+
+	        this.addSkill('聚气', function () {
+	          _this2.qi += 3;
+	        }, '增加 3 点气');
+	      } else if (lv >= 20) {
+	        this.hp = 7;
+	        this.qi = 3;
+
+	        this.addSkill('聚气', function () {
+	          _this2.qi += 3;
+	        }, '增加 3 点气');
+	      } else if (lv >= 15) {
+	        this.hp = 6;
+	        this.qi = 3;
+
+	        this.addSkill('聚气', function () {
+	          _this2.qi += 2;
+	        }, '增加 2 点气');
+	      } else if (lv >= 10) {
+	        this.hp = 5;
+	        this.qi = 2;
+
+	        this.addSkill('聚气', function () {
+	          _this2.qi += 2;
+	        }, '增加 2 点气');
+	      } else if (lv >= 5) {
+	        this.hp = 4;
+	        this.qi = 2;
+
+	        this.addSkill('聚气', function () {
+	          _this2.qi += 1;
+	        }, '增加 1 点气');
+	      } else {
+	        this.hp = 3;
+	        this.qi = 1;
+
+	        this.addSkill('聚气', function () {
+	          _this2.qi += 1;
+	        }, '增加 1 点气');
+	      }
+
+	      if (lv >= 1) {
+	        this.addSkill('防御', function () {
+	          _this2.defence = 1;
+	        }, '抵挡 1 伤害');
+	      }
+
+	      if (lv >= 1) {
+	        this.addSkill('斩击', function (enemy) {
+	          enemy.hp -= 1; // TODO: enemy 以后也有可能会有防御技能
+	        }, '消耗 1 气，对单体敌人造成 1 伤害');
+	      }
+	    }
+	  }]);
+
+	  return Swordman;
+	})(_player2.default);
+
+	exports.default = Swordman;
 
 /***/ }
 /******/ ]);

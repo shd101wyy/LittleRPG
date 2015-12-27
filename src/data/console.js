@@ -1,6 +1,10 @@
 import React from 'react'
 
 import Map from './map.js'
+import Battle from './battle.js'
+
+import Swordman from './careers/swordman.js'
+import LittleGreenMonster from './enemies/little_green_monster.js'
 
 export default class Console extends React.Component {
   constructor(props) {
@@ -25,7 +29,11 @@ export default class Console extends React.Component {
       )
     }
     return  <div>
-              <Map console={this}> </Map>
+
+              {/* <Map console={this}> </Map> */}
+              <Battle console={this}
+                      enemies={[new LittleGreenMonster(), new LittleGreenMonster()]}
+                      me={new Swordman(1)}> </Battle>
               <div className="console">
                 {historys}
               </div>
