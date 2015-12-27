@@ -154,6 +154,11 @@ export default class Battle extends React.Component {
     // check enemies defeat
     let enemiesLeft = enemies.filter(enemy => enemy.hp > 0).length
     if (enemiesLeft === 0) {
+      // add exp to player
+      let exp = this.calculateExp()
+      this.props.me.gainExp(exp, true)
+      console.addHistory('战斗结束！你的 生命值 和 气 都恢复了')
+      console.addHistory('-------------------------')
       this.setState({win: true})
     }
   }
@@ -168,13 +173,6 @@ export default class Battle extends React.Component {
     return exp
   }
 
-  // add exp to player
-  updatePlayer() {
-    let exp = this.calculateExp()
-    this.props.me.gainExp(exp)
-    return ''
-  }
-
   render() {
     let enemies = this.props.enemies,
         me = this.props.me
@@ -185,7 +183,7 @@ export default class Battle extends React.Component {
                   (this.state.win || this.state.defeat) ?
                   <div className="result-panel">
                     <p className="title">{this.state.win ? '战斗胜利！' : '战斗失败。。'}</p>
-                    {this.state.win ? <p className="exp"> {`Exp      + ${this.calculateExp()}  => ${me.currentExp + this.calculateExp()}/${me.requiredExpToNextLevel} ${this.updatePlayer()} ` } </p> : null}
+                    {this.state.win ? <p className="exp"> {`Exp      + ${this.calculateExp()}  => ${me.currentExp}/${me.requiredExpToNextLevel}` } </p> : null}
                   </div> :
                   <div className="enemies">
                     {enemies.map((enemy, i) => {

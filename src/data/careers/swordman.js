@@ -16,13 +16,18 @@ export default class Swordman extends BattleObject{
     this.setLevel(lv)
   }
 
-  gainExp(exp) {
+  gainExp(exp, resetHpAndQi = false) {
     this.currentExp += exp
     if (this.currentExp > this.requiredExpToNextLevel) {
       this.lv += 1
-      setLevel(this.lv)
+      this.setLevel(this.lv)
 
       this.requiredExpToNextLevel = Math.pow(2, (this.lv + 1))
+      return
+    }
+
+    if (resetHpAndQi) {
+      this.setLevel(this.lv)
     }
   }
 
@@ -125,7 +130,6 @@ export default class Swordman extends BattleObject{
     }
 
     if (lv >= 1) {
-      console.log('enter here')
       this.addSkill({ skillName: '斩击',
                       func: (enemies)=> {
                         this.qi -= 1

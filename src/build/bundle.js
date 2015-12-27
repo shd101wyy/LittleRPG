@@ -20955,6 +20955,11 @@
 	        return enemy.hp > 0;
 	      }).length;
 	      if (enemiesLeft === 0) {
+	        // add exp to player
+	        var exp = this.calculateExp();
+	        this.props.me.gainExp(exp, true);
+	        console.addHistory('战斗结束！你的 生命值 和 气 都恢复了');
+	        console.addHistory('-------------------------');
 	        this.setState({ win: true });
 	      }
 	    }
@@ -20968,16 +20973,6 @@
 	      });
 
 	      return exp;
-	    }
-
-	    // add exp to player
-
-	  }, {
-	    key: 'updatePlayer',
-	    value: function updatePlayer() {
-	      var exp = this.calculateExp();
-	      this.props.me.gainExp(exp);
-	      return '';
 	    }
 	  }, {
 	    key: 'render',
@@ -21005,7 +21000,7 @@
 	              'p',
 	              { className: 'exp' },
 	              ' ',
-	              'Exp      + ' + this.calculateExp() + '  => ' + (me.currentExp + this.calculateExp()) + '/' + me.requiredExpToNextLevel + ' ' + this.updatePlayer() + ' ',
+	              'Exp      + ' + this.calculateExp() + '  => ' + me.currentExp + '/' + me.requiredExpToNextLevel,
 	              ' '
 	            ) : null
 	          ) : _react2.default.createElement(
@@ -21275,12 +21270,19 @@
 	  _createClass(Swordman, [{
 	    key: 'gainExp',
 	    value: function gainExp(exp) {
+	      var resetHpAndQi = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+
 	      this.currentExp += exp;
 	      if (this.currentExp > this.requiredExpToNextLevel) {
 	        this.lv += 1;
-	        setLevel(this.lv);
+	        this.setLevel(this.lv);
 
 	        this.requiredExpToNextLevel = Math.pow(2, this.lv + 1);
+	        return;
+	      }
+
+	      if (resetHpAndQi) {
+	        this.setLevel(this.lv);
 	      }
 	    }
 	  }, {
@@ -21387,7 +21389,6 @@
 	      }
 
 	      if (lv >= 1) {
-	        console.log('enter here');
 	        this.addSkill({ skillName: '斩击',
 	          func: function func(enemies) {
 	            _this2.qi -= 1;
