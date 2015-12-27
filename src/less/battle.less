@@ -1,7 +1,11 @@
 .battle-panel {
+  position: relative;
   width: 800px;
   height: 500px;
   display: inline-block;
+
+  user-select: none;
+  -webkit-user-select: none;
 
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     width: 300px;
@@ -24,6 +28,18 @@
         width: 120px;
         height: 120px;
         margin-right: 40px;
+
+        &.attack-target {
+          background-color: #454545;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &.chosen {
+            background-color: #811E1E;
+          }
+        }
       }
     }
 
@@ -53,12 +69,14 @@
       color: #d95858;
       font-size: 16px;
       text-align: left;
+      padding-left: 10px;
     }
 
     .qi {
       color: #418aeb;
       font-size: 16px;
       text-align: left;
+      padding-left: 10px;
     }
   }
 
@@ -83,6 +101,11 @@
         cursor: pointer;
         background-color: #333333;
       }
+
+      &.chosen {
+        border: 1px solid #8E8E8E;
+        background-color: #1C6734;
+      }
     }
 
     .skill-info {
@@ -98,6 +121,44 @@
 
       .skill-name {
         font-size: 20px;
+      }
+    }
+  }
+
+  .turn {
+    position: absolute;
+    color: #c9c9c9;
+    font-size: 32px;
+    left: 290px;
+    top: 282px;
+    background-color: #222222;
+    padding: 0 20px;
+  }
+
+  .next-turn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #c9c9c9;
+    border: 1px solid #454545;
+    width: 150px;
+    padding: 10px;
+    background-color: #383838;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #454545;
+    }
+
+    &::after {
+      content: "请先选择技能";
+    }
+
+    &.available {
+      background-color: #30834B;
+
+      &::after {
+        content: "下一回合";
       }
     }
   }
