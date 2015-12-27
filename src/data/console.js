@@ -13,6 +13,12 @@ export default class Console extends React.Component {
     this.state = {
       texts: ["你进入了暮色森林"]
     }
+
+    this.battle = <Battle console={this}
+            enemies={[new LittleGreenMonster(), new LittleGreenMonster()]}
+            me={new Swordman(2)}> </Battle>
+
+    console.addHistory = this.addHistory.bind(this)
   }
 
   addHistory(text) {
@@ -31,9 +37,7 @@ export default class Console extends React.Component {
     return  <div>
 
               {/* <Map console={this}> </Map> */}
-              <Battle console={this}
-                      enemies={[new LittleGreenMonster(), new LittleGreenMonster()]}
-                      me={new Swordman(1)}> </Battle>
+              {this.battle}
               <div className="console">
                 {historys}
               </div>

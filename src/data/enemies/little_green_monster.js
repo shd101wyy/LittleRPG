@@ -1,6 +1,6 @@
-import GameObject from '../game_object.js'
+import BattleObject from '../battle_object.js'
 
-export default class LittleGreenMonster extends GameObject {
+export default class LittleGreenMonster extends BattleObject {
   constructor() {
     super({
       name: 'little green monster',
@@ -15,16 +15,28 @@ export default class LittleGreenMonster extends GameObject {
     this.hp = 2
     this.qi = 1
 
-    this.skills = [
-      {skillName: '聚气', func: ()=> {this.qi += 1}, info: '聚集 1 气'},
-      {skillName: '撞击', func: (enemy)=> {
-        this.damage = 1
-        if (enemy.defence) {
-          enemy.defence -= damage
-        } else {
-          enemy.hp -= damage
-        }
-      }, info: '消耗 1 气，对单体敌人造成 1 伤害'}
-    ]
+    this.addSkill({ skillName: '聚气',
+                    func: ()=> {
+                      this.qi += 1
+                      console.addHistory('绿色小妖憋足了气，获得了 1 气')
+                    },
+                    info: '聚集 1 气',
+                    qi: 1})
+    this.addSkill({ skillName: '撞击',
+                    func: (enemies)=> {
+                            this.qi -= 1
+                            let damage = 1
+                            if (enemies[0].defence) {
+                              enemies[0].defence -= damage
+                              console.addHistory(`绿色小妖向 ${enemies[0].info} 发起了撞击，但是被防了下来`)
+                            } else {
+                              enemies[0].hp -= damage
+                              console.addHistory(`绿色小妖向 ${enemies[0].info} 发起了撞击，成功撞到了对方，造车了 1 伤害`)
+                            }
+                          },
+                    info: '消耗 1 气，对单体敌人造成 1 伤害',
+                    mode: 'enemy',
+                    targetNum: 1,
+                    qi: 1})
   }
 }

@@ -9,11 +9,11 @@ export default class Battle extends React.Component {
       chosenSkillName: null,
       canEnterNextTurn: false,
       attackEnemy: false,
+      NPCLoading: false, // 等待 NPC 完成动作
       targets: []  // 技能释放对象
     }
 
     this.turn = 1;
-    this.targetNum = 0
     this.chosenSkill = null
     this.chosenTargets = []
   }
@@ -44,6 +44,14 @@ export default class Battle extends React.Component {
 
   clickSkill(skill) {
     console.log('click skill ', skill)
+    if (skill.qi > this.props.me.qi) {
+      console.log('气不够')
+      console.addHistory([`你试图使用技能 ${skill.skillName}，但是发现 气 不够`,
+                          `你的 气 不够了，无法使用技能 ${skill.skillName}`,
+                         `你感到筋疲力尽，想使用技能 ${skill.skillName}，但是感到心有余而力不足`].randomPick())
+      return
+    }
+
     if (this.state.chosenSkillName === skill.skillName) {
       this.setState({chosenSkillName: null, canEnterNextTurn: false, attackEnemy: false})
     } else {
@@ -53,7 +61,6 @@ export default class Battle extends React.Component {
         this.setState({canEnterNextTurn: true, attackEnemy: false})
       } else if (skill.mode === "enemy") {
         this.setState({canEnterNextTurn: false, attackEnemy: true})
-        this.targetNum = skill.targetNum
       }
     }
   }
@@ -78,7 +85,7 @@ export default class Battle extends React.Component {
       }
       target.chosen = true
       this.chosenTargets.push(target)
-      if (this.chosenTargets.length === this.targetNum) {
+      if (this.chosenTargets.length === this.chosenSkill.targetNum) {
         this.setState({canEnterNextTurn: true})
       } else {
         this.setState({canEnterNextTurn: false})
@@ -93,9 +100,14 @@ export default class Battle extends React.Component {
     console.log(skill)
     console.log(targets)
 
+    console.addHistory('-------------------------')
+
+    // player action
     if (skill.mode === 'self') {
       skill.func()
     } else if (skill.mode === 'enemy') {
+      skill.func(targets)
+    } else { // friends
       skill.func(targets)
     }
 
@@ -103,8 +115,24 @@ export default class Battle extends React.Component {
       targets[i].chosen = false
     }
 
+    // enemies action
+    this.setState({NPCLoading: true})
+    let enemies = this.props.enemies
+    enemies.forEach((enemy, i)=> {
+      if (enemy.hp > 0) {
+        setTimeout(()=> {
+          enemy.autoAction([this.props.me])
+          if (i === enemies.length - 1) {
+            this.setState({NPCLoading: false})
+          }
+        }, 1000 * (i+1))
+      }
+    })
+
+    // restore defence
+    this.props.me.defence = 0
+
     // restore everything
-    this.targetNum = 0
     this.chosenSkill = null
     this.chosenTargets = []
     this.turn++
@@ -114,6 +142,7 @@ export default class Battle extends React.Component {
   render() {
     let enemies = this.props.enemies,
         me = this.props.me
+
     return  <div className="battle-panel">
               <div className="battle">
                 <div className="enemies">
@@ -160,9 +189,12 @@ export default class Battle extends React.Component {
               <div className="turn">
                 {this.turn}
               </div>
-              <div className={"next-turn " + (this.state.canEnterNextTurn ? 'available' : '')} onClick={this.state.canEnterNextTurn ? this.enterNextTurn.bind(this) : null}>
-
-              </div>
+              {this.state.NPCLoading ?
+                <div className="next-turn-waiting">
+                  请稍等...
+                </div> :
+                <div className={"next-turn " + (this.state.canEnterNextTurn ? 'available' : '')} onClick={this.state.canEnterNextTurn ? this.enterNextTurn.bind(this) : null}></div>
+              }
             </div>
   }
 }
