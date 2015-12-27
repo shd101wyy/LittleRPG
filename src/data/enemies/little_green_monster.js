@@ -17,6 +17,8 @@ export default class LittleGreenMonster extends BattleObject {
     this.hp = 2
     this.qi = 1
 
+    this.exp = Math.floor(Math.random() * 2 + 1)
+
     this.addSkill({ skillName: '聚气',
                     func: ()=> {
                       this.qi += 1

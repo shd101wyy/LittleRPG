@@ -19693,7 +19693,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n  overflow: hidden;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-panel {\n    width: 300px;\n  }\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  color: #c9c9c9;\n  font-size: 16px;\n  margin-top: 218px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map-instruction .hp {\n  color: #d95858;\n}\n.map-instruction .energy {\n  color: #418aeb;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction .energy {\n    margin: 0;\n  }\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction {\n    margin-top: 0;\n  }\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map {\n    margin-top: 24px;\n  }\n}\n.map .first {\n  font-size: 44px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .first {\n    font-size: 30px;\n  }\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .second {\n    font-size: 26px;\n  }\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .third {\n    font-size: 20px;\n  }\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .fourth {\n    font-size: 16px;\n  }\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-info {\n    margin-top: 0;\n    width: 120px;\n  }\n}\n.battle-panel {\n  position: relative;\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .battle-panel {\n    width: 300px;\n  }\n}\n.battle-panel .battle {\n  width: 600px;\n  height: 100%;\n  float: left;\n}\n.battle-panel .battle .result-panel {\n  width: 100%;\n  height: 200px;\n  border-bottom: 3px solid #383838;\n  padding: 0;\n  margin-top: 100px;\n}\n.battle-panel .battle .result-panel .title {\n  font-size: 48px;\n  color: #C9C9C9;\n}\n.battle-panel .battle .enemies {\n  width: 100%;\n  height: 200px;\n  border-bottom: 3px solid #383838;\n  padding: 0;\n  margin-top: 100px;\n}\n.battle-panel .battle .enemies .enemy {\n  float: left;\n  width: 120px;\n  height: 120px;\n  margin-right: 40px;\n}\n.battle-panel .battle .enemies .enemy.attack-target {\n  background-color: #454545;\n}\n.battle-panel .battle .enemies .enemy.attack-target:hover {\n  cursor: pointer;\n}\n.battle-panel .battle .enemies .enemy.attack-target.chosen {\n  background-color: #811E1E;\n}\n.battle-panel .battle .friends {\n  width: 100%;\n  height: 200px;\n  padding: 0;\n  margin-top: 36px;\n}\n.battle-panel .battle .friends .friend {\n  float: left;\n  width: 120px;\n  height: 120px;\n}\n.battle-panel .battle .ascii {\n  font-size: 48px;\n}\n.battle-panel .battle .info {\n  color: #c9c9c9;\n  font-size: 16px;\n}\n.battle-panel .battle .hp {\n  color: #d95858;\n  font-size: 16px;\n  text-align: left;\n  padding-left: 10px;\n}\n.battle-panel .battle .qi {\n  color: #418aeb;\n  font-size: 16px;\n  text-align: left;\n  padding-left: 10px;\n}\n.battle-panel .skills {\n  position: relative;\n  width: 200px;\n  height: 400px;\n  float: left;\n  color: #c9c9c9;\n  padding-top: 100px;\n}\n.battle-panel .skills .title {\n  font-size: 16px;\n}\n.battle-panel .skills .skill {\n  padding: 2px;\n  border: 1px solid #383838;\n  margin-left: 30px;\n}\n.battle-panel .skills .skill:hover {\n  cursor: pointer;\n  background-color: #333333;\n}\n.battle-panel .skills .skill.chosen {\n  border: 1px solid #8E8E8E;\n  background-color: #1C6734;\n}\n.battle-panel .skills .skill-info {\n  width: 150px;\n  height: 150px;\n  text-align: left;\n  padding: 10px 15px;\n  border: 1px solid #383838;\n  position: absolute;\n  top: 100px;\n  left: 199px;\n  background-color: #454545;\n}\n.battle-panel .skills .skill-info .skill-name {\n  font-size: 20px;\n}\n.battle-panel .turn {\n  position: absolute;\n  color: #c9c9c9;\n  font-size: 32px;\n  left: 290px;\n  top: 282px;\n  background-color: #222222;\n  padding: 0 20px;\n}\n.battle-panel .next-turn-waiting {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  color: #c9c9c9;\n  border: 1px solid #454545;\n  width: 150px;\n  padding: 10px;\n  background-color: #383838;\n}\n.battle-panel .next-turn-waiting.win {\n  background-color: #387ED4;\n}\n.battle-panel .next-turn-waiting.win:hover {\n  cursor: pointer;\n}\n.battle-panel .next-turn {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  color: #c9c9c9;\n  border: 1px solid #454545;\n  width: 150px;\n  padding: 10px;\n  background-color: #383838;\n}\n.battle-panel .next-turn:hover {\n  cursor: pointer;\n  background-color: #454545;\n}\n.battle-panel .next-turn::after {\n  content: \"\\8BF7\\5148\\9009\\62E9\\6280\\80FD\";\n}\n.battle-panel .next-turn.available {\n  background-color: #30834B;\n}\n.battle-panel .next-turn.available::after {\n  content: \"\\4E0B\\4E00\\56DE\\5408\";\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: scroll;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console {\n    width: 200px;\n    height: 250px;\n    position: absolute;\n    padding-right: 10px;\n    right: 0;\n    bottom: 0;\n  }\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console .history {\n    font-size: 14px;\n  }\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0;\n}\n#app {\n  background-color: #222;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  font-family: monospace;\n  overflow: hidden;\n}\n.map-panel {\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-panel {\n    width: 300px;\n  }\n}\n.map-instruction {\n  float: left;\n  width: 200px;\n  color: #c9c9c9;\n  font-size: 16px;\n  margin-top: 218px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map-instruction .level {\n  font-size: 14px;\n  font-style: italic;\n  color: #F2F2F2;\n}\n.map-instruction .exp {\n  font-size: 12px;\n  margin-top: -14px;\n}\n.map-instruction .hp {\n  color: #d95858;\n}\n.map-instruction .energy {\n  color: #418aeb;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction .energy {\n    margin: 0;\n  }\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-instruction {\n    margin-top: 0;\n  }\n}\n.map {\n  float: left;\n  width: 400px;\n  height: 300px;\n  margin-top: 200px;\n  font-size: 32px;\n  letter-spacing: 8px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map {\n    margin-top: 24px;\n  }\n}\n.map .first {\n  font-size: 44px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .first {\n    font-size: 30px;\n  }\n}\n.map .second {\n  opacity: 1;\n  font-size: 36px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .second {\n    font-size: 26px;\n  }\n}\n.map .third {\n  opacity: 0.6;\n  font-size: 28px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .third {\n    font-size: 20px;\n  }\n}\n.map .fourth {\n  opacity: 0.3;\n  font-size: 24px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map .fourth {\n    font-size: 16px;\n  }\n}\n.map .map-row {\n  width: 100%;\n  height: 32px;\n  margin-bottom: 32px;\n}\n.map .map-item {\n  width: 32px;\n  height: 32px;\n  float: left;\n  text-align: center;\n  margin-right: 32px;\n  padding-bottom: 18px;\n  user-select: none;\n  -webkit-user-select: none;\n}\n.map .map-item:hover {\n  cursor: default;\n}\n.map .not-movable {\n  opacity: 0.6;\n}\n.map .movable:hover {\n  cursor: pointer;\n}\n.map-info {\n  float: left;\n  color: #c9c9c9;\n  font-size: 14px;\n  margin-top: 218px;\n  width: 200px;\n  text-align: left;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .map-info {\n    margin-top: 0;\n    width: 120px;\n  }\n}\n.battle-panel {\n  position: relative;\n  width: 800px;\n  height: 500px;\n  display: inline-block;\n  color: #c9c9c9;\n  user-select: none;\n  -webkit-user-select: none;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .battle-panel {\n    width: 300px;\n  }\n}\n.battle-panel .battle {\n  width: 600px;\n  height: 100%;\n  float: left;\n}\n.battle-panel .battle .result-panel {\n  width: 100%;\n  height: 200px;\n  border-bottom: 3px solid #383838;\n  padding: 0;\n  margin-top: 100px;\n}\n.battle-panel .battle .result-panel .title {\n  font-size: 48px;\n  color: #C9C9C9;\n}\n.battle-panel .battle .result-panel .exp {\n  font-size: 16px;\n}\n.battle-panel .battle .enemies {\n  width: 100%;\n  height: 200px;\n  border-bottom: 3px solid #383838;\n  padding: 0;\n  margin-top: 100px;\n}\n.battle-panel .battle .enemies .enemy {\n  float: left;\n  width: 120px;\n  height: 120px;\n  margin-right: 40px;\n}\n.battle-panel .battle .enemies .enemy.attack-target {\n  background-color: #454545;\n}\n.battle-panel .battle .enemies .enemy.attack-target:hover {\n  cursor: pointer;\n}\n.battle-panel .battle .enemies .enemy.attack-target.chosen {\n  background-color: #811E1E;\n}\n.battle-panel .battle .friends {\n  width: 100%;\n  height: 200px;\n  padding: 0;\n  margin-top: 36px;\n}\n.battle-panel .battle .friends .friend {\n  float: left;\n  width: 120px;\n  height: 120px;\n}\n.battle-panel .battle .ascii {\n  font-size: 48px;\n}\n.battle-panel .battle .info {\n  color: #c9c9c9;\n  font-size: 16px;\n}\n.battle-panel .battle .hp {\n  color: #d95858;\n  font-size: 16px;\n  text-align: left;\n  padding-left: 10px;\n}\n.battle-panel .battle .qi {\n  color: #418aeb;\n  font-size: 16px;\n  text-align: left;\n  padding-left: 10px;\n}\n.battle-panel .skills {\n  position: relative;\n  width: 200px;\n  height: 400px;\n  float: left;\n  color: #c9c9c9;\n  padding-top: 100px;\n}\n.battle-panel .skills .title {\n  font-size: 16px;\n}\n.battle-panel .skills .skill {\n  padding: 2px;\n  border: 1px solid #383838;\n  margin-left: 30px;\n}\n.battle-panel .skills .skill:hover {\n  cursor: pointer;\n  background-color: #333333;\n}\n.battle-panel .skills .skill.chosen {\n  border: 1px solid #8E8E8E;\n  background-color: #1C6734;\n}\n.battle-panel .skills .skill-info {\n  width: 150px;\n  height: 150px;\n  text-align: left;\n  padding: 10px 15px;\n  border: 1px solid #383838;\n  position: absolute;\n  top: 100px;\n  left: 199px;\n  background-color: #454545;\n}\n.battle-panel .skills .skill-info .skill-name {\n  font-size: 20px;\n}\n.battle-panel .turn {\n  position: absolute;\n  color: #c9c9c9;\n  font-size: 32px;\n  left: 290px;\n  top: 282px;\n  background-color: #222222;\n  padding: 0 20px;\n}\n.battle-panel .next-turn-waiting {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  color: #c9c9c9;\n  border: 1px solid #454545;\n  width: 150px;\n  padding: 10px;\n  background-color: #383838;\n}\n.battle-panel .next-turn-waiting.win {\n  background-color: #387ED4;\n}\n.battle-panel .next-turn-waiting.win:hover {\n  cursor: pointer;\n}\n.battle-panel .next-turn {\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  color: #c9c9c9;\n  border: 1px solid #454545;\n  width: 150px;\n  padding: 10px;\n  background-color: #383838;\n}\n.battle-panel .next-turn:hover {\n  cursor: pointer;\n  background-color: #454545;\n}\n.battle-panel .next-turn::after {\n  content: \"\\8BF7\\5148\\9009\\62E9\\6280\\80FD\";\n}\n.battle-panel .next-turn.available {\n  background-color: #30834B;\n}\n.battle-panel .next-turn.available::after {\n  content: \"\\4E0B\\4E00\\56DE\\5408\";\n}\n.console {\n  position: relative;\n  width: 800px;\n  height: 300px;\n  display: block;\n  margin-left: calc(50% - 400px);\n  color: #c9c9c9;\n  text-align: left;\n  overflow-y: scroll;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console {\n    width: 200px;\n    height: 250px;\n    position: absolute;\n    padding-right: 10px;\n    right: 0;\n    bottom: 0;\n  }\n}\n.console::-webkit-scrollbar {\n  display: none;\n}\n.console:after {\n  position: absolute;\n  bottom: 0;\n  height: 100%;\n  width: 100%;\n  content: \"\";\n  pointer-events: none;\n  /* so the text is still selectable */\n}\n.console .history {\n  font-size: 16px;\n}\n@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {\n  .console .history {\n    font-size: 14px;\n  }\n}\n", ""]);
 
 	// exports
 
@@ -20102,6 +20102,7 @@
 	    value: function leaveBattle() {
 	      this.battle = null;
 	      this.setState({ inBattle: false });
+	      this.forceUpdate();
 	    }
 	  }, {
 	    key: 'render',
@@ -20354,6 +20355,28 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'map-instruction' },
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'career' },
+	            ' ',
+	            this.props.console.player.careerInfo,
+	            ' ',
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'level' },
+	              ' ',
+	              "Lv " + this.props.console.player.lv,
+	              ' '
+	            ),
+	            ' '
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'exp' },
+	            ' ',
+	            'Exp ' + this.props.console.player.currentExp + '/' + this.props.console.player.requiredExpToNextLevel,
+	            ' '
+	          ),
 	          _react2.default.createElement(
 	            'p',
 	            { className: 'hp' },
@@ -20906,14 +20929,14 @@
 	          setTimeout(function () {
 	            enemy.autoAction([_this2.props.me]);
 	            if (i === enemies.length - 1) {
+	              // restore defence
+	              _this2.props.me.defence = 0;
+
 	              _this2.setState({ NPCLoading: false });
 	            }
 	          }, 800 * (i + 1));
 	        }
 	      });
-
-	      // restore defence
-	      this.props.me.defence = 0;
 
 	      // restore everything
 	      this.chosenSkill = null;
@@ -20936,6 +20959,27 @@
 	      }
 	    }
 	  }, {
+	    key: 'calculateExp',
+	    value: function calculateExp() {
+	      var enemies = this.props.enemies,
+	          exp = 0;
+	      enemies.forEach(function (enemy) {
+	        exp += enemy.exp;
+	      });
+
+	      return exp;
+	    }
+
+	    // add exp to player
+
+	  }, {
+	    key: 'updatePlayer',
+	    value: function updatePlayer() {
+	      var exp = this.calculateExp();
+	      this.props.me.gainExp(exp);
+	      return '';
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _this3 = this;
@@ -20956,7 +21000,14 @@
 	              'p',
 	              { className: 'title' },
 	              this.state.win ? '战斗胜利！' : '战斗失败。。'
-	            )
+	            ),
+	            this.state.win ? _react2.default.createElement(
+	              'p',
+	              { className: 'exp' },
+	              ' ',
+	              'Exp      + ' + this.calculateExp() + '  => ' + (me.currentExp + this.calculateExp()) + '/' + me.requiredExpToNextLevel + ' ' + this.updatePlayer() + ' ',
+	              ' '
+	            ) : null
 	          ) : _react2.default.createElement(
 	            'div',
 	            { className: 'enemies' },
@@ -21142,6 +21193,8 @@
 	    _this.hp = 2;
 	    _this.qi = 1;
 
+	    _this.exp = Math.floor(Math.random() * 2 + 1);
+
 	    _this.addSkill({ skillName: '聚气',
 	      func: function func() {
 	        _this.qi += 1;
@@ -21211,11 +21264,26 @@
 	    _this.hp = 1;
 	    _this.qi = 1;
 
+	    _this.lv = lv;
+	    _this.requiredExpToNextLevel = Math.pow(2, _this.lv + 1);
+	    _this.currentExp = 0;
+
 	    _this.setLevel(lv);
 	    return _this;
 	  }
 
 	  _createClass(Swordman, [{
+	    key: 'gainExp',
+	    value: function gainExp(exp) {
+	      this.currentExp += exp;
+	      if (this.currentExp > this.requiredExpToNextLevel) {
+	        this.lv += 1;
+	        setLevel(this.lv);
+
+	        this.requiredExpToNextLevel = Math.pow(2, this.lv + 1);
+	      }
+	    }
+	  }, {
 	    key: 'setLevel',
 	    value: function setLevel(lv) {
 	      var _this2 = this;

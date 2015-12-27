@@ -160,6 +160,8 @@ export default class Map extends React.Component{
 
     return (  <div className="map-panel">
                 <div className="map-instruction">
+                  <p className="career"> {this.props.console.player.careerInfo} <span className="level"> {"Lv " + this.props.console.player.lv} </span> </p>
+                  <p className="exp"> {'Exp ' + this.props.console.player.currentExp + '/' + this.props.console.player.requiredExpToNextLevel} </p>
                   <p className="hp"> {this.drawHp(this.props.console.player.hp)} </p>
                   <p className="energy">{this.drawQi(this.props.console.player.qi)}</p>
                   <p>  </p>

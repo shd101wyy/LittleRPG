@@ -130,14 +130,14 @@ export default class Battle extends React.Component {
         setTimeout(()=> {
           enemy.autoAction([this.props.me])
           if (i === enemies.length - 1) {
+            // restore defence
+            this.props.me.defence = 0
+
             this.setState({NPCLoading: false})
           }
         }, 800 * (i+1))
       }
     })
-
-    // restore defence
-    this.props.me.defence = 0
 
     // restore everything
     this.chosenSkill = null
@@ -158,6 +158,23 @@ export default class Battle extends React.Component {
     }
   }
 
+  calculateExp() {
+    let enemies = this.props.enemies,
+        exp = 0
+    enemies.forEach(enemy => {
+      exp += enemy.exp
+    })
+
+    return exp
+  }
+
+  // add exp to player
+  updatePlayer() {
+    let exp = this.calculateExp()
+    this.props.me.gainExp(exp)
+    return ''
+  }
+
   render() {
     let enemies = this.props.enemies,
         me = this.props.me
@@ -168,6 +185,7 @@ export default class Battle extends React.Component {
                   (this.state.win || this.state.defeat) ?
                   <div className="result-panel">
                     <p className="title">{this.state.win ? '战斗胜利！' : '战斗失败。。'}</p>
+                    {this.state.win ? <p className="exp"> {`Exp      + ${this.calculateExp()}  => ${me.currentExp + this.calculateExp()}/${me.requiredExpToNextLevel} ${this.updatePlayer()} ` } </p> : null}
                   </div> :
                   <div className="enemies">
                     {enemies.map((enemy, i) => {

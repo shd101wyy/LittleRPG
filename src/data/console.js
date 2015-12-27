@@ -41,6 +41,7 @@ export default class Console extends React.Component {
   leaveBattle() {
     this.battle = null
     this.setState({inBattle: false})
+    this.forceUpdate()
   }
 
   render() {

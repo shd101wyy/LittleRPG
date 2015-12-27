@@ -9,7 +9,21 @@ export default class Swordman extends BattleObject{
     this.hp = 1
     this.qi = 1
 
+    this.lv = lv
+    this.requiredExpToNextLevel = Math.pow(2, (this.lv + 1))
+    this.currentExp = 0
+
     this.setLevel(lv)
+  }
+
+  gainExp(exp) {
+    this.currentExp += exp
+    if (this.currentExp > this.requiredExpToNextLevel) {
+      this.lv += 1
+      setLevel(this.lv)
+
+      this.requiredExpToNextLevel = Math.pow(2, (this.lv + 1))
+    }
   }
 
   setLevel(lv) {
