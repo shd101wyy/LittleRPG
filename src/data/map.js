@@ -15,11 +15,11 @@ let _empty = new Empty(),
     _littleGreenMonster = new LittleGreenMonster()
 
 let mapData = [
-  [ _empty, _empty, _empty, _empty, ],
-  [ _empty, _empty, _tree, _empty, ],
-  [ _empty, _empty, _littleGreenMonster, _empty, ],
-  [ _empty, _empty, _empty,  _tree],
-  [ _empty, _player, _empty, _empty, ]
+  [ _empty, _tree, _empty, _empty, ],
+  [ _empty, _empty, _tree, _tree, ],
+  [ _empty, _empty, _littleGreenMonster, _tree, ],
+  [ _empty, _tree, _empty,  _tree],
+  [ _tree, _player, _empty, _empty, ]
 ]
 
 export default class Map extends React.Component{
